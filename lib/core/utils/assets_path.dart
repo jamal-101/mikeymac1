@@ -1,0 +1,34 @@
+class Assetpath{
+  static const String onbording1 = "assets/images/onbording1.png";
+  static const String onbording2 = "assets/images/onbording2.png";
+  static const String login = "assets/images/login.png";
+  static const String google = "assets/images/google.png";
+  static const String apple = "assets/images/apple.png";
+  static const String facebook = "assets/images/facebook.png";
+  static const String appbaricon = "assets/icons/appbarimage.png";
+  static const String home1 = "assets/images/home1.png";
+  static const String close = "assets/icons/close.png";
+  static const String subscription1 = "assets/icons/dialog1.png";
+  static const String subscription2 = "assets/icons/dialog2.png";
+  static const String subscription3 = "assets/icons/dialog3.png";
+  static const String subscription4 = "assets/icons/dialog4.png";
+  static const String subscription5 = "assets/icons/dialog5.png";
+  static const String service1 = "assets/images/service1.png";
+  static const String service2 = "assets/images/service2.png";
+  static const String service3 = "assets/images/service3.png";
+  static const String service4 = "assets/images/service4.png";
+  static const String service5 = "assets/images/service5.png";
+  static const String service6 = "assets/images/service6.png";
+  static const String service7 = "assets/images/service7.png";
+  static const String service8 = "assets/images/service8.png";
+  static const String service9 = "assets/images/service9.png";
+  static const String service10 = "assets/images/service10.png";
+  static const String service11 = "assets/images/service11.png";
+  static const String service12 = "assets/images/service12.png";
+  static const String service13 = "assets/images/service13.png";
+  static const String container1 = "assets/images/container1.png";
+  static const String container2 = "assets/images/container2.png";
+  static const String container3 = "assets/images/container3.png";
+  static const String container4 = "assets/images/conaiter4.png";
+  static const String png2 = "assets/images/png2.png";
+}
