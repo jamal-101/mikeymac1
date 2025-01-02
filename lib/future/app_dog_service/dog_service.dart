@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/advanced_obedience.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/behavioral.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/personal_protection.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/puppy_training.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/residential.dart';
 import '../../core/global_widget/custom_text_helvatica.dart';
 import '../../core/utils/assets_path.dart';
+import 'dog_service/bitework_development.dart';
+import 'dog_service/obedience.dart';
 
 class DogService extends StatelessWidget {
   final List<Map<String ,dynamic>> data =[
@@ -47,22 +55,41 @@ class DogService extends StatelessWidget {
             ),
             itemCount: data.length,
             itemBuilder: (context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xFFF7F7F7)
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      data[index]['image'],height: 70,
-                    ),
-                    SizedBox(height: 20.h,),
-                    Text(
-                      data[index]['title']
-                    )
-                  ],
+              return GestureDetector(
+                onTap: (){
+                  if(index == 0){
+                    Get.to(()=> const Residential());
+                  }else if(index== 1){
+                    Get.to(()=> const PuppyTraining());
+                  }else if(index == 2){
+                    Get.to(()=> const Obedience());
+                  }else if(index == 3){
+                    Get.to(()=> const Behavioral());
+                  }else if(index == 4){
+                    Get.to(()=> const AdvancedObedience());
+                  }else if(index == 5){
+                    Get.to(()=> const PersonalProtection());
+                  }else if(index == 6){
+                    Get.to(()=> const BiteworkDevelopment());
+                  }
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color(0xFFF7F7F7)
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        data[index]['image'],height: 70,
+                      ),
+                      SizedBox(height: 20.h,),
+                      Text(
+                        data[index]['title']
+                      )
+                    ],
+                  ),
                 ),
               );
             },

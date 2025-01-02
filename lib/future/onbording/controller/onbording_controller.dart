@@ -11,7 +11,7 @@ class PaseviewController extends GetxController {
 
   @override
   void onClose() {
-    pageController.dispose(); // Dispose of the PageController
+    pageController.dispose();
     super.onClose();
   }
 }

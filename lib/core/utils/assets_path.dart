@@ -45,4 +45,18 @@ class Assetpath{
   static const String logout = "assets/icons/logout.png";
   static const String location = "assets/icons/location.png";
   static const String arrow = "assets/icons/arrow.png";
+  static const String details1 = "assets/images/details1.png";
+  static const String details2 = "assets/images/details2.png";
+  static const String details3 = "assets/images/details3.png";
+  static const String details4 = "assets/images/details4.png";
+  static const String details5 = "assets/images/details5.png";
+  static const String details6 = "assets/images/details6.png";
+  static const String details7 = "assets/images/details7.png";
+  static const String details8 = "assets/images/details8.png";
+  static const String details9 = "assets/images/details9.png";
+  static const String details10 = "assets/images/details10.png";
+  static const String details11 = "assets/images/details11.png";
+  static const String details12 = "assets/images/details12.png";
+  static const String details13 = "assets/images/details13.png";
+  static const String details14 = "assets/images/details14.png";
 }

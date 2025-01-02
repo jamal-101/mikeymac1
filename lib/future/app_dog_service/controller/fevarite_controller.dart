@@ -1,19 +1,3 @@
-// import 'package:get/get.dart';
-//
-// class FavoriteController extends GetxController {
-//   var isFavorite = false.obs;
-//   var favoriteCount = 0.obs;
-//
-//   void toggleFavorite() {
-//     if (isFavorite.value) {
-//       isFavorite.value = false;
-//       favoriteCount.value = 0;
-//     } else {
-//       isFavorite.value = true;
-//       favoriteCount.value = 1;
-//     }
-//   }
-// }
 import 'package:get/get.dart';
 
 class FavoriteController extends GetxController {
@@ -32,5 +16,10 @@ class FavoriteController extends GetxController {
       favoriteCount.value = 1;
     }
     favoriteStates[index] = !favoriteStates[index];
+  }
+  RxBool isSelected = false.obs;
+
+  void toggleSelection() {
+    isSelected.value = !isSelected.value;
   }
 }

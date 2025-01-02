@@ -12,8 +12,8 @@ class CustomDotedBorder extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: DottedBorder(
-          dashPattern: [10, 4],
-          strokeWidth: 1.3,
+          dashPattern: const [10, 8],
+          strokeWidth: 1.9,
           child: Container(
             height: 50,
             width: 400,
@@ -32,7 +32,7 @@ class CustomDotedBorder extends StatelessWidget {
                       text: "Add Address",
                     fontWeight: FontWeight.w400,
                       size: 16.sp,
-                    color: Color(0xFF000000),
+                    color: const Color(0xFF000000),
                   ),
                 ],
               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Slide extends StatelessWidget {
   bool isActive;
-  Slide(this.isActive);
+  Slide(this.isActive, {super.key});
 
   @override
   Widget build(BuildContext context) {

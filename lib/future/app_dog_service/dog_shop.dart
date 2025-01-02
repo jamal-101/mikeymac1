@@ -36,9 +36,9 @@ class DogShop extends StatelessWidget {
           surfaceTintColor: Colors.white,
           title: CustomTextHelvatica(
               text: "Shop",
-            color: Color(0xFF111827),
+            color: const Color(0xFF111827),
             fontWeight:  FontWeight.w700,
-            fontFamily: 'Helvatica',
+            fontFamily: 'Helvetica',
             size: 20.sp,
           ),
       ),
@@ -55,7 +55,12 @@ class DogShop extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: GestureDetector(
               onTap: (){
-                Get.to(()=> ProductDetails());
+                Get.to(()=>  ProductDetails(
+                  index: index,
+                  image: shop[index]['image'],
+                  title: shop[index]['title'],
+                  price: shop[index]['title1'],
+                ));
               },
               child: Container(
                 decoration:  BoxDecoration(

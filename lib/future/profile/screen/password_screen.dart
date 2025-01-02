@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../core/global_widget/custom_bottom.dart';
 import '../../../core/global_widget/custom_text_field1.dart';
 import '../../../core/global_widget/custom_text_lato.dart';
@@ -60,7 +59,7 @@ class PasswordScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-              child: CustomTextField1(
+              child: const CustomTextField1(
                 hintText: "Old password",
                 // controller: singUpController.fullName.value,
                 // validator: (value) {
@@ -87,9 +86,9 @@ class PasswordScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-              child: CustomTextField1(
+              child: const CustomTextField1(
                 hintText: "New password",
-                // controller: singUpController.singupemailController.value,
+                // controller: singUpController.singulariseController.value,
                 // validator: (value) {
                 //   if (value == null || value.isEmpty) {
                 //     return 'Email is required';
@@ -104,7 +103,7 @@ class PasswordScreen extends StatelessWidget {
             // SizedBox(height: 20.h,),
             // Padding(
             //   padding: EdgeInsets.only(right: 290.w),
-            //   child: CustomTextLato(
+            //   child: CustomTextLate(
             //     text: "Confirm Password",
             //     textAlign: TextAlign.start,
             //     color:  Color(0xFF1D2939),
@@ -114,19 +113,19 @@ class PasswordScreen extends StatelessWidget {
             // ),
             SizedBox(height: 20.h,),
             Padding(
-              padding: EdgeInsets.only(right: 250),
+              padding: const EdgeInsets.only(right: 250),
               child: CustomTextLato(text: "Confirm Password",
-              color: Color(0xFF1D2939),
+              color: const Color(0xFF1D2939),
               size: 16.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-              child: CustomTextField1(
+              child: const CustomTextField1(
 
                 hintText: "Confirm password",
-                // controller: singUpController.singConfirmpassController.value,
+                // controller: singUpController.singConfirm passController.value,
                 // obscureText: true,
                 // validator: (value) {
                 //   if (value == null || value.isEmpty) {
@@ -142,7 +141,7 @@ class PasswordScreen extends StatelessWidget {
               child: CustomButton(
                 title: "Update Change",
                 textStyle: GoogleFonts.inter(
-                  color: Color(0xFFFFFFFF),
+                  color: const Color(0xFFFFFFFF),
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
                 ),

@@ -23,12 +23,15 @@ class CustomTextIner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+
       text,
       overflow: textOverflow,
       maxLines: max,
       textAlign: textAlign,
       style: GoogleFonts.inter(
-          color: color, fontSize: size, fontWeight: fontWeight),
+          color: color, fontSize: size, fontWeight: fontWeight,
+          decoration: TextDecoration.none
+      ),
     );
   }
 }

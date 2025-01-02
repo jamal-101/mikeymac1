@@ -7,7 +7,7 @@ import '../../../../core/global_widget/custom_text_inter.dart';
 import '../../../../core/utils/assets_path.dart';
 
 class CustomSubscription extends StatelessWidget {
-  CustomSubscription({Key? key}) : super(key: key);
+  const CustomSubscription({super.key});
 
   @override
   Widget build(BuildContext context) {

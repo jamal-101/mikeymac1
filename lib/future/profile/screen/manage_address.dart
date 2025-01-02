@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mikemac2/core/global_widget/custom_doted_border.dart';
 import 'package:mikemac2/core/global_widget/custom_text_lato.dart';
-
 import '../../../core/utils/assets_path.dart';
 
 class ManageAddress extends StatelessWidget {
@@ -81,7 +80,7 @@ class ManageAddress extends StatelessWidget {
             ),
           ),
           SizedBox(height: 25.h,),
-          CustomDotedBorder()
+         const CustomDotedBorder()
         ],
       ),
     );

@@ -145,14 +145,14 @@ class SingUpScreen extends StatelessWidget {
                     child: CustomButton(
                       title: "Create Account",
                       textStyle: GoogleFonts.inter(
-                        color: Color(0xFFFFFFFF),
+                        color: const Color(0xFFFFFFFF),
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                       ),
                       onTap: () {
                         // if (formKey.currentState!.validate()) {
                         // }
-                        Get.to(()=>HomeScreen());
+                        Get.to(()=>const HomeScreen());
                       },
                       height: 50.h,
                       width: 400.w,

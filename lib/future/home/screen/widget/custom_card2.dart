@@ -6,10 +6,10 @@ class CustomCard extends StatelessWidget {
   final String title;
 
   const CustomCard({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

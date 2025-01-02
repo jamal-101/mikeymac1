@@ -7,7 +7,6 @@ import 'package:mikemac2/future/profile/controller/switch_controller.dart';
 import 'package:mikemac2/future/profile/screen/password_screen.dart';
 import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
-
 import 'manage_address.dart';
 
 class Profile extends StatelessWidget {
@@ -115,11 +114,11 @@ class Profile extends StatelessWidget {
                   trailing: GestureDetector(
                     onTap: () {
                       if (index == 0) {
-                        Get.to(() => UserProfile());
+                        Get.to(() =>const UserProfile());
                       } else if (index == 1) {
-                        Get.to(() => ManageAddress());
+                        Get.to(() =>const ManageAddress());
                       } else if (index == 3) {
-                        Get.to(() => PasswordScreen());
+                        Get.to(() =>const PasswordScreen());
                       } else if (index == 4) {
                         showModalBottomSheet(
                           isDismissible: false,
@@ -129,7 +128,7 @@ class Profile extends StatelessWidget {
                             ),
                             context: context,
                             builder: ((context) {
-                             return CustomDailalog();
+                             return const CustomDailalog();
                             }));
                       }
                     },

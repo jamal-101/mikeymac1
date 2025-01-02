@@ -115,7 +115,7 @@ class OtpScreen extends StatelessWidget {
                     fontSize: 16.sp,
                     title: "Submit",
                     textStyle: GoogleFonts.inter(
-                      color: Color(0xFFFFFFFF),
+                      color: const Color(0xFFFFFFFF),
                       fontWeight: FontWeight.w400,
                       fontSize: 16.sp
                     ),

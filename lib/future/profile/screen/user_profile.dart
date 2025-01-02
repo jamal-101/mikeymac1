@@ -87,7 +87,7 @@ class UserProfile extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-                child: CustomTextField1(
+                child: const CustomTextField1(
                   hintText: "Name",
                   // controller: singUpController.fullName.value,
                   // validator: (value) {
@@ -114,9 +114,9 @@ class UserProfile extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-                child: CustomTextField1(
+                child: const CustomTextField1(
                   hintText: "652 452 124",
-                  // controller: singUpController.singupemailController.value,
+                  // controller: singUpController.singulariseController.value,
                   // validator: (value) {
                   //   if (value == null || value.isEmpty) {
                   //     return 'Email is required';
@@ -134,16 +134,16 @@ class UserProfile extends StatelessWidget {
                 child: CustomTextLato(
                   text: "Email",
                   textAlign: TextAlign.start,
-                  color:  Color(0xFF1D2939),
+                  color: const Color(0xFF1D2939),
                   size: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-                child: CustomTextField1(
+                child: const CustomTextField1(
                   hintText: "example@gmail.com",
-                  // controller: singUpController.singuppasswordController.value,
+                  // controller: singUpController.upperclasswomanController.value,
                   // obscureText: true,
                   // validator: (value) {
                   //   if (value == null || value.isEmpty) {
@@ -162,17 +162,17 @@ class UserProfile extends StatelessWidget {
                 child: CustomTextLato(
                   text: "Gender",
                   textAlign: TextAlign.start,
-                  color:  Color(0xFF1D2939),
+                  color:const Color(0xFF1D2939),
                   size: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
-                child: CustomTextField1(
+                child: const CustomTextField1(
                   
                   hintText: "Male",
-                  // controller: singUpController.singConfirmpassController.value,
+                  // controller: singUpController.singConfirm passController.value,
                   // obscureText: true,
                   // validator: (value) {
                   //   if (value == null || value.isEmpty) {
@@ -188,7 +188,7 @@ class UserProfile extends StatelessWidget {
                 child: CustomButton(
                   title: "Update Change",
                   textStyle: GoogleFonts.inter(
-                    color: Color(0xFFFFFFFF),
+                    color: const Color(0xFFFFFFFF),
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
                   ),
