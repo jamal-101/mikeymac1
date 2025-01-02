@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mikemac2/future/app_dog_service/dog_service/advanced_obedience.dart';
-import 'package:mikemac2/future/app_dog_service/dog_service/behavioral.dart';
-import 'package:mikemac2/future/app_dog_service/dog_service/personal_protection.dart';
-import 'package:mikemac2/future/app_dog_service/dog_service/puppy_training.dart';
-import 'package:mikemac2/future/app_dog_service/dog_service/residential.dart';
+import 'package:mikemac2/future/auth/route/app_route.dart';
 import '../../core/global_widget/custom_text_helvatica.dart';
 import '../../core/utils/assets_path.dart';
-import 'dog_service/bitework_development.dart';
-import 'dog_service/obedience.dart';
 
 class DogService extends StatelessWidget {
-  final List<Map<String ,dynamic>> data =[
-    {'image' : Assetpath.service1, 'title' : "Residential Training",},
-    {'image' : Assetpath.service2, 'title' : "Puppy Training",},
-    {'image' : Assetpath.service3, 'title' : "General Obedience",},
-    {'image' : Assetpath.service4, 'title' : "Behavioral Issues",},
-    {'image' : Assetpath.service5, 'title' : "Advanced Obedience",},
-    {'image' : Assetpath.service6, 'title' : "Personal Protection",},
-    {'image' : Assetpath.service7, 'title' : "Bitework Development",},
-    {'image' : Assetpath.service8, 'title' : "Helper Decoy Training",},
-    {'image' : Assetpath.service9, 'title' : "Scentwork Training",},
-    {'image' : Assetpath.service10, 'title' : "Agility",},
-    {'image' : Assetpath.service11, 'title' : "IGP Dog Sports",},
-    {'image' : Assetpath.service12, 'title' : "Video Call",},
-    {'image' : Assetpath.service13, 'title' : "Online Training",},
+  final List<Map<String ,dynamic>> serviceList =[
+    {'image' : Assetpath.service1, 'title' : "Residential Training",'route' : AppRouts.residential},
+    {'image' : Assetpath.service2, 'title' : "Puppy Training",'route' : AppRouts.puppytraining},
+    {'image' : Assetpath.service3, 'title' : "General Obedience",'route' : AppRouts.obedience},
+    {'image' : Assetpath.service4, 'title' : "Behavioral Issues",'route' : AppRouts.behavior},
+    {'image' : Assetpath.service5, 'title' : "Advanced Obedience",'route' : AppRouts.advancedObedience},
+    {'image' : Assetpath.service6, 'title' : "Personal Protection",'route' : AppRouts.personalProtection},
+    {'image' : Assetpath.service7, 'title' : "Bitework Development",'route' : AppRouts.biteworkDevelopment},
+    {'image' : Assetpath.service8, 'title' : "Helper Decoy Training",'route' : AppRouts.helperDecoy},
+    {'image' : Assetpath.service9, 'title' : "Scentwork Training",'route' : AppRouts.scentWork},
+    {'image' : Assetpath.service10, 'title' : "Agility",'route' : AppRouts.agility},
+    {'image' : Assetpath.service11, 'title' : "IGP Dog Sports",'route' : AppRouts.igpDogSports},
+    {'image' : Assetpath.service12, 'title' : "Video Call",'route' : AppRouts.virtualVideo},
+    {'image' : Assetpath.service13, 'title' : "Online Training",'route' : AppRouts.residential},
   ];
    DogService({super.key});
 
@@ -51,27 +45,13 @@ class DogService extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 15,
               mainAxisSpacing: 15,
-              childAspectRatio: 1,
+              childAspectRatio: 160/118,
             ),
-            itemCount: data.length,
+            itemCount: serviceList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: (){
-                  if(index == 0){
-                    Get.to(()=> const Residential());
-                  }else if(index== 1){
-                    Get.to(()=> const PuppyTraining());
-                  }else if(index == 2){
-                    Get.to(()=> const Obedience());
-                  }else if(index == 3){
-                    Get.to(()=> const Behavioral());
-                  }else if(index == 4){
-                    Get.to(()=> const AdvancedObedience());
-                  }else if(index == 5){
-                    Get.to(()=> const PersonalProtection());
-                  }else if(index == 6){
-                    Get.to(()=> const BiteworkDevelopment());
-                  }
+                  Get.toNamed(serviceList[index]['route']);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -82,11 +62,11 @@ class DogService extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        data[index]['image'],height: 70,
+                        serviceList[index]['image'],height: 70,
                       ),
                       SizedBox(height: 20.h,),
                       Text(
-                        data[index]['title']
+                          serviceList[index]['title']
                       )
                     ],
                   ),

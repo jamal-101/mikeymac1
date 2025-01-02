@@ -1,11 +1,16 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/advanced_obedience.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/agility.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/behavioral.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/bitework_development.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/helper_decoy.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/igp.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/obedience.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/personal_protection.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/puppy_training.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/residential.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/scentwork.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/virtual_Video.dart';
 import 'package:mikemac2/future/profile/screen/password_screen.dart';
 import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import '../../app_dog_service/dog_service.dart';
@@ -38,6 +43,11 @@ class AppRouts {
   static const String advancedObedience = "/advancedObedience";
   static const String personalProtection = "/personalProtection";
   static const String biteworkDevelopment = "/biteworkDevelopment";
+  static const String helperDecoy = "/helperDecoy";
+  static const String scentWork = "/scentWork";
+  static const String agility = "/agility";
+  static const String igpDogSports = "/igpDogSports";
+  static const String virtualVideo = "/virtualVideo";
 
   static List<GetPage> routes = [
     GetPage(name: onboardingscreen, page: () => OnbordingScreen()),
@@ -58,6 +68,12 @@ class AppRouts {
     GetPage(name: advancedObedience, page: () => AdvancedObedience()),
     GetPage(name: personalProtection, page: () => PersonalProtection()),
     GetPage(name: biteworkDevelopment, page: () => BiteworkDevelopment()),
+    GetPage(name: helperDecoy, page: () => HelperDecoy()),
+    GetPage(name: scentWork, page: () => Scentwork()),
+    GetPage(name: scentWork, page: () => Scentwork()),
+    GetPage(name: agility, page: () => Agility()),
+    GetPage(name: igpDogSports, page: () => IgpDogSports()),
+    GetPage(name: virtualVideo, page: () => VirtualVideo()),
 
   ];
 }

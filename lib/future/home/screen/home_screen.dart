@@ -158,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSpacing: 15,
                     childAspectRatio: 1,
                   ),
-                  itemCount: DogService().data.length - 9,
+                  itemCount: DogService().serviceList.length - 9,
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
@@ -168,13 +168,13 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            DogService().data[index]['image'],
+                            DogService().serviceList[index]['image'],
                             height: 70,
                           ),
                           SizedBox(
                             height: 10.h,
                           ),
-                          Text(DogService().data[index]['title'])
+                          Text(DogService().serviceList[index]['title'])
                         ],
                       ),
                     );

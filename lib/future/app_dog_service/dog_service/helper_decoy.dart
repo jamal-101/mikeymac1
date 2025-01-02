@@ -7,7 +7,6 @@ import 'package:mikemac2/core/utils/assets_path.dart';
 
 class HelperDecoy extends StatelessWidget {
   const HelperDecoy({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,14 +16,14 @@ class HelperDecoy extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  Assetpath.details2,
+                  Assetpath.details7,
                   height: 300.h,
                   width: 350.w,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 250),
+                  padding: const EdgeInsets.only(right: 190),
                   child: CustomTextIner(
-                    text: "Dog Behavior's  ✅ ",
+                    text: "Helper/Decoy Training  ✅",
                     size: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF000000),
@@ -34,41 +33,26 @@ class HelperDecoy extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 15,right: 15),
                   child: CustomTextManrope(
-                    text: '''A dog behavioral issue is a certain behavior that an owner finds unacceptable, regardless of whether it's abnormal.
-Behavioral problems can vary by country, region, and the dog's history and environment. Some common behavioral issues include:
-Handler or dog on dog Aggression: Growling, snarling, showing teeth, lunging, and biting. Aggression is the most common and serious behavioral problem in dogs and needs expert intervention.
+                    text: '''Bite helper or decoy training is a type of dog training that involves using a decoy dog or person as a sparring partner or advisory for a dog:
 
-Barking: Excessive barking can be a behavioral problem.
+Sparring partner
+The decoy is a dog's sparring partner, and the two have a unique connection that can help the dog become a better fighter.
 
-Separation anxiety: A type of anxiety that can be a behavioral problem.
+Advisory
+The decoy can be a dog's fiercest advisor, especially during scenario-based training or a trial.
 
-Fear of loud noises:
-Dogs can develop a fear of loud noises, such as fireworks.
+Training helper
+A good training helper is needed every day, and it takes years of experience to become one. A good training helper knows when to tell a handler when a dog needs to work on obedience before bitework.
 
-Destructive chewing:
-Dogs can destroy furniture or objects.
-Digging: Dogs can dig.
+Here are some things to consider about bite helper or decoy training:
 
-Excessive licking:
-Dogs can lick excessively.
+Inconsistent behavior
+An inexperienced decoy might not recognize when a dog is focused on the stick as prey, and the dog might chase it and get locked in prey.
 
-Eating anything and everything:
-Dogs can eat anything and everything.
+Face and hand bites
+While it's not common, face or hand bites can happen during protection training. When it does happen, it's usually the result of a mistake made by the decoy.
 
-Pulling on the lead:
-Dogs can pull on the lead.
-
-Jumping up at people:
-Dogs can jump up at people which can lead to you or your dog being reported to the relevant authorities.
-
-Recall problems:
-Dogs can have recall problems, meaning they don't come back when called.
-
-Peeing/pooing in the house:
-Dogs can urinate or defecate in the house.
-
-If your dog is showing signs of stress or fear, such as excessive panting, licking lips, hiding, cowering, or aggression, you should ask your trainer/behaviourist for advice.
-If your dog has aggressive tendencies, you should consult your vet first in case of any medical issues and then seek the help of an experienced dog trainer or behaviorist
+Training young dogs too early in defence and putting too much or the incorrect amount of pressure on dogs.
  ''',
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
