@@ -34,7 +34,7 @@ class UserController extends GetxController{
       );
 
       EasyLoading.showSuccess("Registration completed successfully");
-      Get.offAllNamed(AppRouts.homeScreen);
+      Get.offAllNamed(AppRouts.navBar);
 
 
 
