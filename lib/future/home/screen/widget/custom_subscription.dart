@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../../core/global_widget/custom_bottom.dart';
 import '../../../../core/global_widget/custom_text_inter.dart';
 import '../../../../core/utils/assets_path.dart';
+import 'custom_dialog2.dart';
 
 class CustomSubscription extends StatelessWidget {
   const CustomSubscription({super.key});
@@ -209,7 +210,9 @@ class CustomSubscription extends StatelessWidget {
                    fontFamily: 'Helvetica',
                    color: const Color(0xFFFFFFFF),
                  ),
-                 onTap: (){})
+                 onTap: (){
+                   CustomDialog().showContactDialog(context);
+                 })
             ],
           ),
         ),

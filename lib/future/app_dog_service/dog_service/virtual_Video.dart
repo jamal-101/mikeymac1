@@ -5,6 +5,8 @@ import 'package:mikemac2/core/global_widget/custom_text_inter.dart';
 import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 
+import '../../home/screen/widget/custom_dialog2.dart';
+
 class VirtualVideo extends StatelessWidget {
   const VirtualVideo({super.key});
   @override
@@ -54,7 +56,9 @@ Users can also share their screen, share files, and use text chat.''',
                           fontFamily: 'Helvetica',
                           color: const Color(0xFFFFFFFF)
                       ),
-                      onTap: (){}
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
                   ),
                 )
               ],

@@ -25,10 +25,15 @@ class PasswordScreen extends StatelessWidget {
             ),
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              child: Image.asset(
-                Assetpath.profile1,
-                height: 20,
-                width: 20,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  Assetpath.profile1,
+                  height: 20,
+                  width: 20,
+                ),
               ),
             ),
           ),

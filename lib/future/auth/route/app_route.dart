@@ -6,11 +6,13 @@ import 'package:mikemac2/future/app_dog_service/dog_service/bitework_development
 import 'package:mikemac2/future/app_dog_service/dog_service/helper_decoy.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/igp.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/obedience.dart';
+import 'package:mikemac2/future/app_dog_service/dog_service/online_training.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/personal_protection.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/puppy_training.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/residential.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/scentwork.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/virtual_Video.dart';
+import 'package:mikemac2/future/home/screen/widget/about_traner.dart';
 import 'package:mikemac2/future/profile/screen/password_screen.dart';
 import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import '../../app_dog_service/dog_service.dart';
@@ -48,6 +50,8 @@ class AppRouts {
   static const String agility = "/agility";
   static const String igpDogSports = "/igpDogSports";
   static const String virtualVideo = "/virtualVideo";
+  static const String onlineTraining = "/onlineTraining";
+  static const String aboutTrainer = "/aboutTrainer";
 
   static List<GetPage> routes = [
     GetPage(name: onboardingscreen, page: () => OnbordingScreen()),
@@ -74,6 +78,9 @@ class AppRouts {
     GetPage(name: agility, page: () => Agility()),
     GetPage(name: igpDogSports, page: () => IgpDogSports()),
     GetPage(name: virtualVideo, page: () => VirtualVideo()),
+    GetPage(name: virtualVideo, page: () => VirtualVideo()),
+    GetPage(name: onlineTraining, page: () => OnlineTraining()),
+    GetPage(name: aboutTrainer, page: () => AboutTraner()),
 
   ];
 }

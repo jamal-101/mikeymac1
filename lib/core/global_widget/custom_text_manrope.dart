@@ -28,6 +28,7 @@ class CustomTextManrope extends StatelessWidget {
       maxLines: max,
       textAlign: textAlign,
       style: GoogleFonts.manrope(
+          decoration: TextDecoration.none,
           color: color, fontSize: size, fontWeight: fontWeight),
     );
   }

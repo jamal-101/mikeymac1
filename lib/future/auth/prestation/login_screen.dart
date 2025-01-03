@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
+import 'package:mikemac2/future/auth/controller/user_controller.dart';
 import 'package:mikemac2/future/auth/prestation/sing_up_screen.dart';
 import '../../../core/global_widget/custom_bottom.dart';
 import '../../../core/global_widget/custom_container.dart';
@@ -11,8 +13,6 @@ import '../../../core/global_widget/custom_text_inter.dart';
 import '../../../core/global_widget/custom_text_manrope.dart';
 import '../../../core/utils/app_color.dart';
 import '../../../core/utils/assets_path.dart';
-import '../../home/screen/home_screen.dart';
-import '../../nav_bar/bottom_navbar.dart';
 import '../controller/login_controller.dart';
 import 'forget_password.dart';
 
@@ -22,6 +22,8 @@ class LoginScreen extends StatelessWidget {
 
   final formKey = GlobalKey<FormState>();
   final LoginController loginController = Get.put(LoginController());
+  final UserController userController = Get.put(UserController());
+  final SingUpController singUpController = Get.put(SingUpController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,11 +127,16 @@ class LoginScreen extends StatelessWidget {
                         color: Color(0xFFFFFFFF)
                       ),
                       onTap: () {
-                        // Get.to(()=>HomeScreen());
-                        Get.to(()=>NavigatinPage());
+                        // // Get.to(()=>HomeScreen());
+                        // Get.to(()=>NavigatinPage());
                         // if (formKey.currentState!.validate()) {
+                        //   loginController.loginMethod();
                         //   Get.to(()=>HomeScreen());
                         // }
+                        userController.login(
+                            singUpController.singupemailController.value.text,
+                            singUpController.singuppasswordController.value.text
+                        );
                       },
                       height: 50.h,
                       width: 400.w,

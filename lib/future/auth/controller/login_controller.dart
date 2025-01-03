@@ -1,11 +1,17 @@
+import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
+import 'package:mikemac2/future/auth/controller/user_controller.dart';
+import 'package:mikemac2/future/auth/route/app_route.dart';
+
 
 class LoginController extends GetxController{
 
   Rx<TextEditingController> emailController = TextEditingController().obs;
   Rx<TextEditingController> passwordController = TextEditingController().obs;
-  // RxString activationCode = "".obs;
+
 }

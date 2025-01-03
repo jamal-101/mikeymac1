@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mikemac2/core/global_widget/custom_bottom.dart';
 import 'package:mikemac2/core/global_widget/custom_text_helvatica.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
-import 'package:mikemac2/future/app_dog_service/product_details.dart';
 import 'controller/fevarite_controller.dart';
 
 
@@ -55,12 +54,12 @@ class DogShop extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: GestureDetector(
               onTap: (){
-                Get.to(()=>  ProductDetails(
-                  index: index,
-                  image: shop[index]['image'],
-                  title: shop[index]['title'],
-                  price: shop[index]['title1'],
-                ));
+                // Get.to(()=>  ProductDetails(
+                //   index: index,
+                //   image: shop[index]['image'],
+                //   title: shop[index]['title'],
+                //   price: shop[index]['title1'],
+                // ));
               },
               child: Container(
                 decoration:  BoxDecoration(

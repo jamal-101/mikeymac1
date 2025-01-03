@@ -5,6 +5,8 @@ import 'package:mikemac2/core/global_widget/custom_text_inter.dart';
 import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 
+import '../../home/screen/widget/custom_dialog2.dart';
+
 class Agility extends StatelessWidget {
   const Agility({super.key});
   @override
@@ -69,7 +71,9 @@ Agility training can be hard work, so you should figure out what will keep your 
                           fontFamily: 'Helvetica',
                           color: const Color(0xFFFFFFFF)
                       ),
-                      onTap: (){}
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
                   ),
                 )
               ],

@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/global_widget/custom_bottom.dart';
 import '../../../../core/global_widget/custom_text_inter.dart';
 import '../../../../core/utils/assets_path.dart';
+import 'custom_dialog2.dart';
 
 class CustomCardWithStack extends StatelessWidget {
   const CustomCardWithStack({super.key});
@@ -40,7 +41,9 @@ class CustomCardWithStack extends StatelessWidget {
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    CustomDialog().showContactDialog(context);
+                  },
                   height: 40.h,
                   width: 130.w,
                 ),

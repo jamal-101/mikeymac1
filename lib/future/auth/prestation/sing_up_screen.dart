@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mikemac2/future/auth/controller/user_controller.dart';
 import '../../../core/global_widget/custom_bottom.dart';
 import '../../../core/global_widget/custom_text_field.dart';
 import '../../../core/global_widget/custom_text_inter.dart';
 import '../../../core/utils/assets_path.dart';
-import '../../home/screen/home_screen.dart';
 import '../controller/sing_up_controller.dart';
 
 class SingUpScreen extends StatelessWidget {
+
+
   SingUpScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
 
   final  SingUpController singUpController = Get.put(SingUpController());
+  final UserController userController = Get.put(UserController());
 
 
   @override
@@ -152,7 +155,11 @@ class SingUpScreen extends StatelessWidget {
                       onTap: () {
                         // if (formKey.currentState!.validate()) {
                         // }
-                        Get.to(()=>const HomeScreen());
+                       userController.registration(
+                           singUpController.singupemailController.value.text,
+                           singUpController.singuppasswordController.value.text
+                       );
+                        // Get.to(()=>const HomeScreen());
                       },
                       height: 50.h,
                       width: 400.w,

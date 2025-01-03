@@ -1,9 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mikemac2/core/global_widget/custom_bottom.dart';
 import 'package:mikemac2/core/global_widget/custom_text_inter.dart';
 import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
+import 'package:mikemac2/future/home/screen/widget/custom_dialog2.dart';
 
 class AdvancedObedience extends StatelessWidget {
   const AdvancedObedience({super.key});
@@ -72,7 +74,10 @@ Advanced obedience training can be useful in situations where precise control is
                           fontFamily: 'Helvetica',
                           color: const Color(0xFFFFFFFF)
                       ),
-                      onTap: (){}
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+
+                      }
                   ),
                 )
               ],

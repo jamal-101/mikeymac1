@@ -22,4 +22,12 @@ class FavoriteController extends GetxController {
   void toggleSelection() {
     isSelected.value = !isSelected.value;
   }
+  RxInt selectedIndex = (-1).obs;
+  void toggole(int index){
+    if(selectedIndex.value == index ){
+      selectedIndex.value = -1;
+    }else{
+      selectedIndex.value = index;
+    }
+  }
 }

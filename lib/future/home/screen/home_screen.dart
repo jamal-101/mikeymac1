@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mikemac2/future/home/screen/widget/about_traner.dart';
 import 'package:mikemac2/future/home/screen/widget/custom_card.dart';
 import 'package:mikemac2/future/home/screen/widget/custom_shop.dart';
 import 'package:mikemac2/future/home/screen/widget/custom_subscription.dart';
@@ -216,7 +217,7 @@ class HomeScreen extends StatelessWidget {
                   child: CustomShop()),
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 22),
+              padding: const EdgeInsets.symmetric(horizontal: 22),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -241,7 +242,9 @@ class HomeScreen extends StatelessWidget {
                      SizedBox(height: 20.h,),
                      CustomButton(
                          title: "About Trainer",
-                         onTap: (){},
+                         onTap: (){
+                           Get.to(()=>AboutTraner());
+                         },
                        textStyle: GoogleFonts.inter(
                          color:const Color(0xFFFFFFFF),
                          fontWeight: FontWeight.w400,

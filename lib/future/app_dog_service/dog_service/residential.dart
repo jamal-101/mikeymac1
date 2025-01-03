@@ -8,6 +8,8 @@ import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../home/screen/widget/custom_dialog2.dart';
+
 class Residential extends StatelessWidget {
   const Residential({super.key});
 
@@ -96,7 +98,9 @@ We have a world 🌍 class residential training program that has hundred of posi
                         fontFamily: 'Helvetica',
                         color: const Color(0xFFFFFFFF)
                       ),
-                      onTap: (){}
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
                   ),
                 )
               ],

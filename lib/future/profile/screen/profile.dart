@@ -7,6 +7,7 @@ import 'package:mikemac2/future/profile/controller/switch_controller.dart';
 import 'package:mikemac2/future/profile/screen/password_screen.dart';
 import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
+import '../../home/screen/home_screen.dart';
 import 'manage_address.dart';
 
 class Profile extends StatelessWidget {
@@ -54,10 +55,14 @@ class Profile extends StatelessWidget {
             ),
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              child: Image.asset(
-                Assetpath.profile1,
-                height: 20,
-                width: 20,
+              child: GestureDetector(
+                onTap: (){
+                    },
+                child: Image.asset(
+                  Assetpath.profile1,
+                  height: 20,
+                  width: 20,
+                ),
               ),
             ),
           ),

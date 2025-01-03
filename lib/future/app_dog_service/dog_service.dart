@@ -19,7 +19,7 @@ class DogService extends StatelessWidget {
     {'image' : Assetpath.service10, 'title' : "Agility",'route' : AppRouts.agility},
     {'image' : Assetpath.service11, 'title' : "IGP Dog Sports",'route' : AppRouts.igpDogSports},
     {'image' : Assetpath.service12, 'title' : "Video Call",'route' : AppRouts.virtualVideo},
-    {'image' : Assetpath.service13, 'title' : "Online Training",'route' : AppRouts.residential},
+    {'image' : Assetpath.service13, 'title' : "Online Training",'route' : AppRouts.onlineTraining},
   ];
    DogService({super.key});
 

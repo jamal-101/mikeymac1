@@ -5,6 +5,8 @@ import 'package:mikemac2/core/global_widget/custom_text_inter.dart';
 import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 
+import '../../home/screen/widget/custom_dialog2.dart';
+
 class Scentwork extends StatelessWidget {
   const Scentwork({super.key});
   @override
@@ -70,7 +72,9 @@ Be aware that the duration of your dog's training sessions will likely lessen wh
                           fontFamily: 'Helvetica',
                           color: const Color(0xFFFFFFFF)
                       ),
-                      onTap: (){}
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
                   ),
                 )
               ],
