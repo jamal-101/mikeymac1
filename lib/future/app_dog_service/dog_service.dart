@@ -20,6 +20,7 @@ class DogService extends StatelessWidget {
     {'image' : Assetpath.service11, 'title' : "IGP Dog Sports",'route' : AppRouts.igpDogSports},
     {'image' : Assetpath.service12, 'title' : "Video Call",'route' : AppRouts.virtualVideo},
     {'image' : Assetpath.service13, 'title' : "Online Training",'route' : AppRouts.onlineTraining},
+    {'image' : Assetpath.service15, 'title' : "Training Plans",'route' : AppRouts.trainingPlans},
   ];
    DogService({super.key});
 
@@ -45,7 +46,7 @@ class DogService extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 15,
               mainAxisSpacing: 15,
-              childAspectRatio: 160/118,
+              childAspectRatio: 0.8/0.8,
             ),
             itemCount: serviceList.length,
             itemBuilder: (context, index) {

@@ -45,7 +45,7 @@ Users can also share their screen, share files, and use text chat.''',
                     color: const Color(0xFF334155),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 30,top: 10),
                   child: CustomButton(
                       height: 50.h,
                       width: 370.w,

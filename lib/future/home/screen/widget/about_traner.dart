@@ -2,10 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mikemac2/core/global_widget/custom_text_inter.dart';
 import 'package:mikemac2/core/global_widget/custom_text_manrope.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../core/global_widget/custom_text_inter.dart';
 
 class AboutTraner extends StatelessWidget {
   const AboutTraner({super.key});
@@ -22,7 +23,7 @@ class AboutTraner extends StatelessWidget {
         children: [
           SizedBox(height: 30.h,),
           Padding(
-            padding: const EdgeInsets.only(left: 20,top: 20),
+            padding: const EdgeInsets.only(left: 2,top: 20),
             child: Row(
               children: [
                 IconButton(
@@ -32,7 +33,7 @@ class AboutTraner extends StatelessWidget {
                   Navigator.pop(context);
                   },
                   ),
-                SizedBox(width: 80.w,),
+                SizedBox(width: 70.w,),
                 CustomTextIner(
                     text: "Michaels Story",
                   size: 24.sp,
@@ -42,7 +43,7 @@ class AboutTraner extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 30.h,),
+          SizedBox(height: 10.h,),
           Image.asset(Assetpath.details14,
             height: 290.h,
           ),
@@ -199,14 +200,16 @@ WE ARE ALSO INSPECTED ANNUALLY FOR COMPLIANCE.''',
             Assetpath.triner,
             height: 270.h,
           ),
-          SizedBox(height: 10.h,),
-          Image.asset(Assetpath.triner1,
-            height: 270.h,
+          // SizedBox(height: 10.h,),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10,top: 10),
+            child: Image.asset(Assetpath.triner1,
+              height: 270.h,
+            ),
           )
         ],
         ),
       ),
-
     );
   }
 }

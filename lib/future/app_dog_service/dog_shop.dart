@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mikemac2/core/global_widget/custom_bottom.dart';
 import 'package:mikemac2/core/global_widget/custom_text_helvatica.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 import 'controller/fevarite_controller.dart';
-
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 class DogShop extends StatelessWidget {
   final List<Map<String, dynamic>> shop = [
@@ -46,20 +45,18 @@ class DogShop extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 0.9,
           mainAxisSpacing: 10.0,
-          childAspectRatio: 1,
+          childAspectRatio: 0.8/0.7,
         ),
         itemCount: shop.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 13),
-            child: GestureDetector(
-              onTap: (){
-                // Get.to(()=>  ProductDetails(
-                //   index: index,
-                //   image: shop[index]['image'],
-                //   title: shop[index]['title'],
-                //   price: shop[index]['title1'],
-                // ));
+            child: InkWell(
+              onTap: () async {
+                // final Uri phoneUri = Uri('https://www.facebook.com/');
+                // String fallbackUrl = 'https://www.facebook.com/page_name';
+                // await UrlLauncher.launchUrl(phoneUri);
+                UrlLauncher.launchUrl(Uri.parse("https://www.facebook.com/\nK9TrainingServices?mibextid=LQQJ4d"));
               },
               child: Container(
                 decoration:  BoxDecoration(
@@ -120,16 +117,16 @@ class DogShop extends StatelessWidget {
                       ],
                     ),
                   ),
-                    CustomButton(
-                      height: 30.h,
-                        width: 100.w,
-                        title: "Add Cart",
-                        textStyle: GoogleFonts.inter(
-                          color: const Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.sp
-                        ),
-                        onTap: (){})
+                    // CustomButton(
+                    //   height: 30.h,
+                    //     width: 100.w,
+                    //     title: "Add Cart",
+                    //     textStyle: GoogleFonts.inter(
+                    //       color: const Color(0xFFFFFFFF),
+                    //       fontWeight: FontWeight.w400,
+                    //       fontSize: 14.sp
+                    //     ),
+                    //     onTap: (){})
                   ],
                 ),
               ),

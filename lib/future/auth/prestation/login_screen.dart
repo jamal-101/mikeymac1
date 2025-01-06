@@ -27,8 +27,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(
-        () => SafeArea(
+      body:  SafeArea(
           child: SingleChildScrollView(
             child: Form(
               key: formKey,
@@ -58,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                     child: CustomTextField(
                       hintText: "Enter your email/phone number",
                       keyboardType: TextInputType.emailAddress,
-                      controller: loginController.emailController.value,
+                      controller: loginController.emailController,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Email is required';
@@ -86,7 +85,8 @@ class LoginScreen extends StatelessWidget {
                         horizontal: 18.0.w, vertical: 8.0.h),
                     child: CustomTextField(
                       hintText: "Enter your password",
-                      controller: loginController.passwordController.value,
+                      controller: loginController.passwordController,
+                      obscureText: true,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Password is required';
@@ -98,53 +98,55 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 10.h),
-                  Padding(
-                    padding: EdgeInsets.only(right: 18.w),
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.to(() => ForgetPassword());
-                      },
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: CustomTextIner(
-                          text: "Forget password",
-                          size: 12.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // SizedBox(height: 10.h),
+                  // Padding(
+                  //   padding: EdgeInsets.only(right: 18.w),
+                  //   child: GestureDetector(
+                  //     onTap: () {
+                  //       Get.to(() => ForgetPassword());
+                  //     },
+                  //     child: Align(
+                  //       alignment: Alignment.centerRight,
+                  //       child: CustomTextIner(
+                  //         text: "Forget password",
+                  //         size: 12.sp,
+                  //         fontWeight: FontWeight.w400,
+                  //         color: Colors.black,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(height: 8.h),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: CustomButton(
-                      title: "Login",
-                      textStyle: GoogleFonts.inter(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.sp,
-                        color: Color(0xFFFFFFFF)
+                    child: Obx(()=>
+
+                    userController.isLoading.value?
+                       const Center(child: CircularProgressIndicator()) :
+                       CustomButton(
+                        title: "Login",
+                        textStyle: GoogleFonts.inter(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16.sp,
+                          color: Color(0xFFFFFFFF)
+                        ),
+                        onTap: () {
+                          if(formKey.currentState!.validate()){
+                            userController.login(
+                                loginController.emailController.text,
+                                loginController.passwordController.text
+                            );
+                          }
+
+                        },
+                        height: 50.h,
+                        width: 400.w,
+                        backgroundColor: Colors.black,
+                        textColor: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        elevation: 6,
                       ),
-                      onTap: () {
-                        // // Get.to(()=>HomeScreen());
-                        // Get.to(()=>NavigatinPage());
-                        // if (formKey.currentState!.validate()) {
-                        //   loginController.loginMethod();
-                        //   Get.to(()=>HomeScreen());
-                        // }
-                        userController.login(
-                            singUpController.singupemailController.value.text,
-                            singUpController.singuppasswordController.value.text
-                        );
-                      },
-                      height: 50.h,
-                      width: 400.w,
-                      backgroundColor: Colors.black,
-                      textColor: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      elevation: 6,
                     ),
                   ),
                   SizedBox(height: 30.h,),
@@ -241,7 +243,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

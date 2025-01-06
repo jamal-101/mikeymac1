@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 import 'package:url_launcher/url_launcher.dart';
 
 class CustomDialog {
-
-
   void showContactDialog(BuildContext context) {
     showDialog(
       barrierDismissible: false,
@@ -23,10 +20,8 @@ class CustomDialog {
             children: [
               InkWell(
                 onTap: () async {
-
-                    final Uri phoneUri = Uri(scheme: 'tel', path: "07496013382");
+                    final Uri phoneUri = Uri(scheme: 'tel', path: "+4407496013382");
                     await launchUrl(phoneUri);
-
                 },
                 child: Container(
                   height: 40.h,
@@ -49,24 +44,21 @@ class CustomDialog {
                         ),
                       ),
                       SizedBox(width: 10.w,),
-                     const Text("Call : 07496013382",
+                     const Text("Call : +4407496013382",
                         style: TextStyle(
                             color: Color(0xFF111827)
                         ),
                       )
                     ],
-                                  ),
+                    ),
                   ),
                 ),
               ),
               SizedBox(height: 10.h,),
               InkWell(
                 onTap: () async {
-
-
                   final Uri phoneUri = Uri(scheme: 'mailto', path: "k9ts@yahoo.com");
                   await launchUrl(phoneUri);
-
                 },
                 child: Container(
                   height: 40.h,
@@ -95,18 +87,14 @@ class CustomDialog {
                         ),
                       )
                     ],
-                                  ),
+                    ),
                   ),
                 ),
               )
             ],
           ),
-
         );
       },
     );
   }
-
-
-
 }
