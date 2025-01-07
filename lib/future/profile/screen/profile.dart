@@ -7,6 +7,7 @@ import 'package:mikemac2/future/profile/controller/switch_controller.dart';
 import 'package:mikemac2/future/profile/screen/password_screen.dart';
 import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
+import '../../nav_bar/controller/nab_bar_controller.dart';
 import 'manage_address.dart';
 
 class Profile extends StatelessWidget {
@@ -40,6 +41,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     final SwitchController switchController = Get.put(SwitchController());
 
+
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.white,
@@ -56,6 +58,8 @@ class Profile extends StatelessWidget {
               backgroundColor: Colors.white,
               child: GestureDetector(
                 onTap: (){
+                  final bottomNavigationController = Get.find<BottomNavigationController>();
+                  bottomNavigationController.changeIndex(0);
                     },
                 child: Image.asset(
                   Assetpath.profile1,

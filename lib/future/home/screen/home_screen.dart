@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeController homeController = Get.put(HomeController());
-    final BottomNavigationController bottomNavigationController = Get.put(BottomNavigationController());
+    // final BottomNavigationController bottomNavigationController = Get.put(BottomNavigationController());
     return Scaffold(
           appBar: AppBar(
             surfaceTintColor: Colors.white,
@@ -33,12 +33,12 @@ class HomeScreen extends StatelessWidget {
                   fontFamily: 'Helvetica',
                   color: const Color(0xFF111827),
                 ),
-              actions: [
-                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Image.asset(Assetpath.appbaricon),
-                )
-            ],
+            //   actions: [
+            //      Padding(
+            //       padding: const EdgeInsets.symmetric(horizontal: 12),
+            //       child: Image.asset(Assetpath.appbaricon),
+            //     )
+            // ],
            ),
           body: SingleChildScrollView(
                     child : Column(
@@ -245,7 +245,7 @@ class HomeScreen extends StatelessWidget {
                                        title: "About Trainer",
                                        onTap: (){
                                          // homeController.change.value = true;
-                                         Get.to(AboutTraner());
+                                         Get.to( const AboutTraner());
                                        },
                                      textStyle: GoogleFonts.inter(
                                        color:const Color(0xFFFFFFFF),

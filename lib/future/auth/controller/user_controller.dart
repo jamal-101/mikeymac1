@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +7,7 @@ import 'package:mikemac2/future/auth/controller/login_controller.dart';
 import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
 import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/home/controller/home_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserController extends GetxController{
 
@@ -26,9 +25,6 @@ class UserController extends GetxController{
     debugPrint("=================$email");
     debugPrint("=================$password");
 
-
-    // EasyLoading.show(status: "Loading..");
-
       UserCredential userCredential =
       await _auth.createUserWithEmailAndPassword(
         email: email,
@@ -37,28 +33,6 @@ class UserController extends GetxController{
 
       EasyLoading.showSuccess("Registration completed successfully");
       Get.offAllNamed(AppRouts.navBar);
-
-
-
-    // on FirebaseAuthException catch (e) {
-    //   if (e.code == 'email-already-in-use') {
-    //     EasyLoading.showError("Email is already in use. Try logging in.");
-    //   } else if (e.code == 'invalid-email') {
-    //     EasyLoading.showError(
-    //         "Invalid email address. Please check and try again.");
-    //   } else {
-    //     EasyLoading.showError("Registration failed. ${e.message}");
-    //   }
-    // } on FirebaseException {
-    //   EasyLoading.showError("Registration failed. Please try again!");
-    // } on Exception catch (e) {
-    //   print(e);
-    // } finally {
-    //   EasyLoading.dismiss();
-    // }
-
-
-
 
   }
 
@@ -75,6 +49,11 @@ class UserController extends GetxController{
         password: password,
       );
       if (userCredential.user != null) {
+
+        // SharedPreferences preferences = await SharedPreferences.getInstance();
+        // preferences.setString("userID", userCredential.user!.uid);
+        // print("UserID stored: ${userCredential.user!.uid}");
+
         Get.toNamed(AppRouts.navBar);
         isLoading.value = false;
         return ;
@@ -89,5 +68,31 @@ class UserController extends GetxController{
 
   }
 
+  Future<void> logout() async {
+    try {
+      await _auth.signOut();
 
+      // SharedPreferences preferences = await SharedPreferences.getInstance();
+      // preferences.clear();
+
+      debugPrint("logout Successfully");
+      Get.offAllNamed(AppRouts.loginScreen);
+    } catch (e) {
+    debugPrint("logout Faild");
+    }
+  }
+
+  var isAuthenticated = false.obs;
+
+  void checkAuthState() {
+    _auth.authStateChanges().listen((User? user) {
+      if (user != null) {
+        isAuthenticated.value = true;
+        Get.offAllNamed(AppRouts.navBar);
+      } else {
+        isAuthenticated.value = false;
+        Get.offNamed(AppRouts.onboardingscreen);
+      }
+    });
+  }
 }

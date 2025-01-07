@@ -20,10 +20,10 @@ class TrainingPlans extends StatelessWidget {
                 Image.asset(
                   Assetpath.details15,
                   height: 300.h,
-                  width: 350.w,
+                  width: 370.w,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 260),
+                  padding: const EdgeInsets.only(right: 250),
                   child: CustomTextIner(
                     text: "Training Plans ✅",
                     size: 16.sp,
@@ -33,7 +33,7 @@ class TrainingPlans extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20,right: 15),
+                  padding: const EdgeInsets.only(left: 20,right: 15,bottom: 40),
                   child: CustomTextManrope(
                     text: '''Creating a dog and puppy training plan involves several key components that address different aspects of training, including obedience, socialization, and behavioral management. Here’s a structured approach you can consider for both dogs and puppies:
 

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/global_widget/custom_text_lato.dart';
 import '../../../../core/global_widget/custom_bottom1.dart';
+import '../../../auth/controller/user_controller.dart';
 import '../../controller/dialog_controller.dart';
 
 class CustomDailalog extends StatelessWidget {
@@ -11,6 +12,7 @@ class CustomDailalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final DialogController dialogController = Get.put(DialogController());
+    final UserController userController = Get.put(UserController());
 
     return Container(
       height: 200.h,
@@ -59,6 +61,8 @@ class CustomDailalog extends StatelessWidget {
                     dialogController.isNoButtonClicked.value =
                     !dialogController.isNoButtonClicked.value;
                     dialogController.isYesButtonClicked.value = false;
+
+                    Navigator.of(context).pop();
                   },
                   backgroundColor: dialogController.isNoButtonClicked.value
                       ? Colors.black
@@ -80,6 +84,10 @@ class CustomDailalog extends StatelessWidget {
                     dialogController.isYesButtonClicked.value =
                     !dialogController.isYesButtonClicked.value;
                     dialogController.isNoButtonClicked.value = false;
+
+                    if (dialogController.isYesButtonClicked.value) {
+                      userController.logout();
+                    }
                   },
                   backgroundColor: dialogController.isYesButtonClicked.value
                       ? Colors.black

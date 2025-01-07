@@ -60,7 +60,7 @@ class Assetpath{
   static const String details12 = "assets/images/details12.png";
   static const String details13 = "assets/images/details13.png";
   static const String details14 = "assets/images/details14.png";
-  static const String details15 = "assets/images/details15.png";
+  static const String details15 = "assets/images/detaisl18.png";
   static const String arrow2 = "assets/images/arrow2.png";
   static const String triner = "assets/images/k9.png";
   static const String triner1 = "assets/images/k8.png";

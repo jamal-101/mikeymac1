@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mikemac2/future/auth/controller/user_controller.dart';
+import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/onbording/presentation/screen/slide.dart';
 import 'package:mikemac2/future/onbording/presentation/screen/slide_item.dart';
 import 'package:mikemac2/future/onbording/presentation/screen/slide_model.dart';
-import '../../../auth/prestation/login_screen.dart';
 import '../../controller/onbording_controller.dart';
 
 class OnbordingScreen extends StatelessWidget {
   OnbordingScreen({super.key});
 
   final PaseviewController controller = Get.put(PaseviewController());
+
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,17 @@ class OnbordingScreen extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: GestureDetector(
               onTap: (){
-                Get.to(()=> LoginScreen());
+                // Get.to(()=> LoginScreen());
+                // _auth.authStateChanges().listen((User? user) {
+                //   if (user != null) {
+                //     Get.offAllNamed(AppRouts.navBar);
+                //   } else {
+                //     Get.offAllNamed(AppRouts.loginScreen);
+                //   }
+                // });
+                // userController.onInit();
+                // userController.checkAuthState();
+                Get.toNamed(AppRouts.loginScreen);
               },
               child: Text(
                 textAlign: TextAlign.center,
@@ -76,7 +90,16 @@ class OnbordingScreen extends StatelessWidget {
                     curve: Curves.easeInOut,
                   );
                 } else {
-                  Get.to(()=> LoginScreen());
+                  // _auth.authStateChanges().listen((User? user) {
+                  //   if (user != null) {
+                  //     Get.offAllNamed(AppRouts.navBar);
+                  //   } else {
+                  //     Get.offAllNamed(AppRouts.loginScreen);
+                  //   }
+                  // });
+                  // userController.onInit();
+                  // userController.checkAuthState();
+                  Get.toNamed(AppRouts.loginScreen);
                 }
               },
               child:const CircleAvatar(

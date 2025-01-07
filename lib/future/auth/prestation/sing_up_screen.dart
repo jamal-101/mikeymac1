@@ -22,6 +22,9 @@ class SingUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    UserController userController = UserController();
+
     return Scaffold(
       body: Obx(() => SafeArea(
           child: SingleChildScrollView(
