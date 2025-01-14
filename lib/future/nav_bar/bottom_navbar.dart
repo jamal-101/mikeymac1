@@ -14,7 +14,7 @@ class NavigatinPage extends StatelessWidget {
   NavigatinPage({super.key});
 
   List<Widget> screen = [
-    HomeScreen(),
+    const HomeScreen(),
     DogService(),
     DogShop(),
     Profile(),

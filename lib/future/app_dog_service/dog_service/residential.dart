@@ -87,7 +87,7 @@ We have a world 🌍 class residential training program that has hundred of posi
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: CustomButton(
                     height: 50.h,
                       width: 370.w,

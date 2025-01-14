@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                         textStyle: GoogleFonts.inter(
                           fontWeight: FontWeight.w400,
                           fontSize: 16.sp,
-                          color: Color(0xFFFFFFFF)
+                          color: const Color(0xFFFFFFFF)
                         ),
                         onTap: () {
                           if(formKey.currentState!.validate()){

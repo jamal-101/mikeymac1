@@ -5,11 +5,11 @@ import '../../../../core/utils/assets_path.dart';
 
 class CustomShop extends StatelessWidget {
   final List<Map<String, dynamic>> item = [
-    {'image': Assetpath.container1, 'title': 'Leads', 'color1': Color(0x3F7663), 'color2': Color(0xFFFFFFFF),},
-    {'image': Assetpath.container2, 'title': 'Leashes', 'color1': Color(0xF2763B), 'color2': Color(0xFFFFFFFF),},
-    {'image': Assetpath.container3, 'title': 'Harnesses', 'color1': Color(0x8B6357), 'color2': Color(0xFFFFFFFF),},
-    {'image': Assetpath.container4, 'title': 'Harnesses', 'color1': Color(0x3F7663), 'color2': Color(0xFFFFFFFF),},
-    {'image': Assetpath.container4, 'title': 'Harnesses', 'color1': Color(0xF2763B), 'color2': Color(0xFFFFFFFF),},
+    {'image': Assetpath.container1, 'title': 'Leads', 'color1': const Color(0x003f7663), 'color2': const Color(0xFFFFFFFF),},
+    {'image': Assetpath.container2, 'title': 'Leashes', 'color1': const Color(0x00f2763b), 'color2': const Color(0xFFFFFFFF),},
+    {'image': Assetpath.container3, 'title': 'Harnesses', 'color1': const Color(0x008b6357), 'color2': const Color(0xFFFFFFFF),},
+    {'image': Assetpath.container4, 'title': 'Harnesses', 'color1': const Color(0x003f7663), 'color2': const Color(0xFFFFFFFF),},
+    {'image': Assetpath.container4, 'title': 'Harnesses', 'color1': const Color(0x00f2763b), 'color2': const Color(0xFFFFFFFF),},
   ];
 
   CustomShop({super.key});
