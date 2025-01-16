@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="Mikeymac"
+        android:label="K9 Training"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
