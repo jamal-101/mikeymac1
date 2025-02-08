@@ -16,7 +16,7 @@ class TrainingPlans extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.only(left: 15,right: 15),
+              padding: const EdgeInsets.only(left: 15,right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -107,29 +107,25 @@ General Tips
 –Patience: Training takes time, and each dog learns at\n  their own pace.
               
 By following these plans, you can help ensure that  your puppy or dog grows into a well-behaved and socially adjusted companion. Adjust the plans based on your dog's specific needs and progress.
-              
-              
                ''',
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
                     color: const Color(0xFF334155),),
-                  Padding(
-                    padding: const EdgeInsets.only(top :1,),
-                    child: CustomButton(
-                        height: 50.h,
-                        width: 370.w,
-                        title: "Call For Service",
-                        textStyle: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16.sp,
-                            fontFamily: 'Helvetica',
-                            color: const Color(0xFFFFFFFF)
-                        ),
-                        onTap: (){
-                          CustomDialog().showContactDialog(context);
-                        }
-                    ),
-                  )
+                  CustomButton(
+                      height: 50.h,
+                      width: 370.w,
+                      title: "Call For Service",
+                      textStyle: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16.sp,
+                          fontFamily: 'Helvetica',
+                          color: const Color(0xFFFFFFFF)
+                      ),
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
+                  ),
+                  SizedBox(height: 10.h,)
                 ],
               ),
             ),
