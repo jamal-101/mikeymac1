@@ -7,7 +7,7 @@ import 'package:mikemac2/future/auth/controller/login_controller.dart';
 import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
 import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/home/controller/home_controller.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 class UserController extends GetxController{
 

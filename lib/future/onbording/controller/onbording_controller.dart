@@ -15,3 +15,4 @@ class PaseviewController extends GetxController {
     super.onClose();
   }
 }
+

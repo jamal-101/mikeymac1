@@ -4,11 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 import 'package:mikemac2/future/profile/controller/switch_controller.dart';
-import 'package:mikemac2/future/profile/screen/password_screen.dart';
-import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
 import '../../nav_bar/controller/nab_bar_controller.dart';
-import 'manage_address.dart';
 
 class Profile extends StatelessWidget {
   Profile({super.key});
@@ -113,34 +110,28 @@ class Profile extends StatelessWidget {
             child: ListView.separated(
               itemCount: proFile.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  leading: Image.asset(proFile[index]['image']),
-                  title: Text(
-                    proFile[index]['title'],
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  trailing: GestureDetector(
-                    onTap: () {
-                      if (index == 0) {
-                        Get.to(() =>const UserProfile());
-                      } else if (index == 1) {
-                        Get.to(() =>const ManageAddress());
-                      } else if (index == 3) {
-                        Get.to(() =>const PasswordScreen());
-                      } else if (index == 4) {
-                        showModalBottomSheet(
-                          isDismissible: false,
-                          backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(50.r)),
-                            ),
-                            context: context,
-                            builder: ((context) {
-                             return const CustomDailalog();
-                            }));
-                      }
-                    },
-                    child: proFile[index]['trailing'] != 'switch'
+                return InkWell(
+                  onTap: (){
+                    if (index == 4) {
+                      showModalBottomSheet(
+                        isDismissible: false,
+                        backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(50.r)),
+                          ),
+                          context: context,
+                          builder: ((context) {
+                           return const CustomDailalog();
+                          }));
+                    }
+                  },
+                  child: ListTile(
+                    leading: Image.asset(proFile[index]['image']),
+                    title: Text(
+                      proFile[index]['title'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: proFile[index]['trailing'] != 'switch'
                         ? Padding(
                             padding: const EdgeInsets.only(left: 12),
                             child: Image.asset(

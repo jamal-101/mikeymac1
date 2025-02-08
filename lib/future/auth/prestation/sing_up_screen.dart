@@ -156,12 +156,12 @@ class SingUpScreen extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       onTap: () {
-                        // if (formKey.currentState!.validate()) {
-                        // }
-                       userController.registration(
-                           singUpController.singupemailController.value.text,
-                           singUpController.singuppasswordController.value.text
-                       );
+                        if (formKey.currentState!.validate()) {
+                          userController.registration(
+                              singUpController.singupemailController.value.text,
+                              singUpController.singuppasswordController.value.text
+                          );
+                        }
                         // Get.to(()=>const HomeScreen());
                       },
                       height: 50.h,

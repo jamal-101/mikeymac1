@@ -13,6 +13,7 @@ class CustomButton extends StatelessWidget {
     this.fontWeight = FontWeight.w500,
     this.elevation = 5.0,
     this.textStyle,
+    this.borderRadius,
   });
 
   final String title;
@@ -25,6 +26,7 @@ class CustomButton extends StatelessWidget {
   final FontWeight fontWeight;
   final double elevation;
   final TextStyle?textStyle;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +38,14 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: elevation,
-              offset: const Offset(0, 2),
-            ),
-          ],
+          borderRadius: borderRadius ?? BorderRadius.circular(10),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.black.withOpacity(0.2),
+          //     blurRadius: elevation,
+          //     offset: const Offset(0, 2),
+          //   ),
+          // ],
         ),
         child: Text(
           title,
