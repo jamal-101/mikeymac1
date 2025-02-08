@@ -16,71 +16,69 @@ class AdvancedObedience extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
-            child: Column(
-              children: [
-                Image.asset(
-                  Assetpath.details4,
-                  height: 300.h,
-                  width: 350.w,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 200),
-                  child: CustomTextIner(
+            child: Padding(
+              padding: EdgeInsets.only(left: 15,right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    Assetpath.details4,
+                    height: 300.h,
+                    width: 350.w,
+                  ),
+                  CustomTextIner(
                     text: "Advanced Obedience ✅",
                     size: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF000000),
                   ),
-                ),
-                SizedBox(height: 10.h,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15,right: 15),
-                  child: CustomTextManrope(
+                  SizedBox(height: 10.h,),
+                  CustomTextManrope(
                     text: '''Advanced dog obedience training builds on basic commands to teach dogs more complex skills, such as how to behave in social situations and off-leash:, we also show you how to train really complex exercises by breaking your obedience down from the very beginning.
-
+              
 Distance commands:
 Dogs learn to respond to commands from a distance, without the need to be close by.
-
+              
 Hand commands:
 Dogs learn to follow hand signals instead of spoken words.
-
+              
 Unseen recall:
 Dogs learn to return to you even when they are further away
-
+              
 Off-leash behavior:
 Dogs learn to behave and follow commands while off-leash in different environments.
-
+              
 In-motion commands:
 Dogs learn to follow commands while they are moving, such as walking or running.
-
+              
 Proofing commands:
 Dogs learn to follow commands in different environments and distractions.
-
+              
 Advanced obedience training can be useful in situations where precise control is needed, such as in crowded or distracting areas
- ''',
+               ''',
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
                     color: const Color(0xFF334155),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: CustomButton(
-                      height: 50.h,
-                      width: 370.w,
-                      title: "Call For Service",
-                      textStyle: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16.sp,
-                          fontFamily: 'Helvetica',
-                          color: const Color(0xFFFFFFFF)
-                      ),
-                      onTap: (){
-                        CustomDialog().showContactDialog(context);
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: CustomButton(
+                        height: 50.h,
+                        width: 370.w,
+                        title: "Call For Service",
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16.sp,
+                            fontFamily: 'Helvetica',
+                            color: const Color(0xFFFFFFFF)
+                        ),
+                        onTap: (){
+                          CustomDialog().showContactDialog(context);
 
-                      }
-                  ),
-                )
-              ],
+                        }
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

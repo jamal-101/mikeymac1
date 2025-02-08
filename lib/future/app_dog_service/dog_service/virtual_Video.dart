@@ -15,26 +15,24 @@ class VirtualVideo extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
-            child: Column(
-              children: [
-                Image.asset(
-                  Assetpath.details12,
-                  height: 300.h,
-                  width: 350.w,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 110),
-                  child: CustomTextIner(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15,right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    Assetpath.details12,
+                    height: 300.h,
+                    width: 350.w,
+                  ),
+                  CustomTextIner(
                     text: "Virtual Video Training Sessions ✅",
                     size: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF000000),
                   ),
-                ),
-                SizedBox(height: 10.h,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15,right: 15),
-                  child: CustomTextManrope(
+                  SizedBox(height: 10.h,),
+                  CustomTextManrope(
                     text: '''A virtual video call is a fantastic way to connect with us for one to one training sessions if you
 can't attend our training centre due to living in a different country or just to far away to get to
 us.
@@ -43,25 +41,25 @@ Users can also share their screen, share files, and use text chat.''',
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
                     color: const Color(0xFF334155),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 30,top: 10),
-                  child: CustomButton(
-                      height: 50.h,
-                      width: 370.w,
-                      title: "Call For Service",
-                      textStyle: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16.sp,
-                          fontFamily: 'Helvetica',
-                          color: const Color(0xFFFFFFFF)
-                      ),
-                      onTap: (){
-                        CustomDialog().showContactDialog(context);
-                      }
-                  ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 30,top: 10),
+                    child: CustomButton(
+                        height: 50.h,
+                        width: 370.w,
+                        title: "Call For Service",
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16.sp,
+                            fontFamily: 'Helvetica',
+                            color: const Color(0xFFFFFFFF)
+                        ),
+                        onTap: (){
+                          CustomDialog().showContactDialog(context);
+                        }
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
