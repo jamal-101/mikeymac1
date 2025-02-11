@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../core/global_widget/custom_bottom.dart';
 import '../../../../core/global_widget/custom_text_inter.dart';
 import '../../../../core/utils/assets_path.dart';
