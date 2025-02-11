@@ -162,7 +162,6 @@ class SingUpScreen extends StatelessWidget {
                               singUpController.singuppasswordController.value.text
                           );
                         }
-                        // Get.to(()=>const HomeScreen());
                       },
                       height: 50.h,
                       width: 400.w,

@@ -62,23 +62,22 @@ Developed in the early 1900s to evaluate German Shepherds, IGP is now open to al
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
                     color: const Color(0xFF334155),),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: CustomButton(
-                        height: 50.h,
-                        width: 370.w,
-                        title: "Call For Service",
-                        textStyle: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16.sp,
-                            fontFamily: 'Helvetica',
-                            color: const Color(0xFFFFFFFF)
-                        ),
-                        onTap: (){
-                          CustomDialog().showContactDialog(context);
-                        }
-                    ),
-                  )
+                  SizedBox(height: 10.h,),
+                  CustomButton(
+                      height: 50.h,
+                      width: 370.w,
+                      title: "Call For Service",
+                      textStyle: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16.sp,
+                          fontFamily: 'Helvetica',
+                          color: const Color(0xFFFFFFFF)
+                      ),
+                      onTap: (){
+                        CustomDialog().showContactDialog(context);
+                      }
+                  ),
+                  SizedBox(height: 10.h,)
                 ],
               ),
             ),

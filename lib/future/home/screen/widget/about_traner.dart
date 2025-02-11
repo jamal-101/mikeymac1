@@ -200,7 +200,6 @@ WE ARE ALSO INSPECTED ANNUALLY FOR COMPLIANCE.''',
             Assetpath.triner,
             height: 270.h,
           ),
-          // SizedBox(height: 10.h,),
           Padding(
             padding: const EdgeInsets.only(bottom: 10,top: 10),
             child: Image.asset(Assetpath.triner1,

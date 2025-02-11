@@ -4,7 +4,6 @@ class CustomTextHelvatica extends StatelessWidget {
   final String text;
   final Color? color;
   final double? size;
-  // final TextAlign? textAlign;
   final FontWeight? fontWeight;
   final String? fontFamily;
   final int? max;
@@ -15,7 +14,6 @@ class CustomTextHelvatica extends StatelessWidget {
         required this.text,
         this.color,
         this.size,
-        // this.textAlign,
         this.fontWeight,
         this.fontFamily,
         this.max,

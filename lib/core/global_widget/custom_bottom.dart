@@ -39,23 +39,10 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: borderRadius ?? BorderRadius.circular(10),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.black.withOpacity(0.2),
-          //     blurRadius: elevation,
-          //     offset: const Offset(0, 2),
-          //   ),
-          // ],
         ),
         child: Text(
           title,
           style: textStyle,
-
-          // style: TextStyle(
-          //   // fontSize: fontSize.sp,
-          //   // fontWeight: fontWeight,
-          //   // color: textColor,
-          // ),
         ),
       ),
     );

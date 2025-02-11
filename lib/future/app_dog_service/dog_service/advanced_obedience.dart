@@ -17,7 +17,7 @@ class AdvancedObedience extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.only(left: 15,right: 15),
+              padding: const EdgeInsets.only(left: 15,right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

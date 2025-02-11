@@ -20,7 +20,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeController homeController = Get.put(HomeController());
-    // final BottomNavigationController bottomNavigationController = Get.put(BottomNavigationController());
     return Scaffold(
           appBar: AppBar(
             surfaceTintColor: Colors.white,
@@ -33,12 +32,6 @@ class HomeScreen extends StatelessWidget {
                   fontFamily: 'Helvetica',
                   color: const Color(0xFF111827),
                 ),
-            //   actions: [
-            //      Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 12),
-            //       child: Image.asset(Assetpath.appbaricon),
-            //     )
-            // ],
            ),
           body: SingleChildScrollView(
                     child : Column(
@@ -116,7 +109,6 @@ class HomeScreen extends StatelessWidget {
                                         ],
                                       ),
                                     )
-                                 // ),
                       : const SizedBox(),
                           ),
                           Padding(
@@ -244,7 +236,6 @@ class HomeScreen extends StatelessWidget {
                                    CustomButton(
                                        title: "About Trainer",
                                        onTap: (){
-                                         // homeController.change.value = true;
                                          Get.to( const AboutTraner());
                                        },
                                      textStyle: GoogleFonts.inter(
@@ -257,7 +248,6 @@ class HomeScreen extends StatelessWidget {
                                    ),
                                  ],
                                 ),
-                                // SizedBox(width: 30.w,),
                                 Image.asset(Assetpath.png1,height: 255.h,width: 150.w,)
                               ],
                             ),

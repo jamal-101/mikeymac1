@@ -53,9 +53,6 @@ class DogShop extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: InkWell(
               onTap: () async {
-                // final Uri phoneUri = Uri('https://www.facebook.com/');
-                // String fallbackUrl = 'https://www.facebook.com/page_name';
-                // await UrlLauncher.launchUrl(phoneUri);
                 UrlLauncher.launchUrl(Uri.parse("https://www.facebook.com/\nK9TrainingServices?mibextid=LQQJ4d"));
               },
               child: Container(
@@ -117,16 +114,6 @@ class DogShop extends StatelessWidget {
                       ],
                     ),
                   ),
-                    // CustomButton(
-                    //   height: 30.h,
-                    //     width: 100.w,
-                    //     title: "Add Cart",
-                    //     textStyle: GoogleFonts.inter(
-                    //       color: const Color(0xFFFFFFFF),
-                    //       fontWeight: FontWeight.w400,
-                    //       fontSize: 14.sp
-                    //     ),
-                    //     onTap: (){})
                   ],
                 ),
               ),

@@ -50,10 +50,6 @@ class UserController extends GetxController{
       );
       if (userCredential.user != null) {
 
-        // SharedPreferences preferences = await SharedPreferences.getInstance();
-        // preferences.setString("userID", userCredential.user!.uid);
-        // print("UserID stored: ${userCredential.user!.uid}");
-
         Get.toNamed(AppRouts.navBar);
         isLoading.value = false;
         return ;
@@ -71,10 +67,6 @@ class UserController extends GetxController{
   Future<void> logout() async {
     try {
       await _auth.signOut();
-
-      // SharedPreferences preferences = await SharedPreferences.getInstance();
-      // preferences.clear();
-
       debugPrint("logout Successfully");
       Get.offAllNamed(AppRouts.loginScreen);
     } catch (e) {

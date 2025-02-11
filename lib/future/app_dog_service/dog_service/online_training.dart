@@ -84,7 +84,7 @@ To subscribe follow this link:
                     size: 14.sp,
                     color: const Color(0xFF334155),),
                   Padding(
-                    padding: EdgeInsets.only(right: 120),
+                    padding: const EdgeInsets.only(right: 120),
                     child: RichText(
                         text:  TextSpan(
                           text:
