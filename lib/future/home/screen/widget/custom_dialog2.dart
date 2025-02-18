@@ -26,7 +26,7 @@ class CustomDialog {
                     await launchUrl(phoneUri,
                         mode: LaunchMode.externalApplication);
                   } else {
-                  debugPrint("Cannot launch phone dialer");
+                    debugPrint("Cannot launch phone dialer");
                   }
                 },
                 child: Container(
@@ -70,7 +70,7 @@ class CustomDialog {
                     await launchUrl(emailUri,
                         mode: LaunchMode.externalApplication);
                   } else {
-                  debugPrint( "Cannot open email app");
+                    debugPrint("Cannot open email app");
                   }
                 },
                 child: Container(
