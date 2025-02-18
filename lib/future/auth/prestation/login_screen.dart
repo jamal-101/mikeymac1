@@ -7,14 +7,13 @@ import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
 import 'package:mikemac2/future/auth/controller/user_controller.dart';
 import 'package:mikemac2/future/auth/prestation/sing_up_screen.dart';
 import '../../../core/global_widget/custom_bottom.dart';
-import '../../../core/global_widget/custom_container.dart';
 import '../../../core/global_widget/custom_text_field.dart';
 import '../../../core/global_widget/custom_text_inter.dart';
 import '../../../core/global_widget/custom_text_manrope.dart';
 import '../../../core/utils/app_color.dart';
 import '../../../core/utils/assets_path.dart';
 import '../controller/login_controller.dart';
-import 'forget_password.dart';
+
 
 
 class LoginScreen extends StatelessWidget {
@@ -102,24 +101,6 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  // SizedBox(height: 10.h),
-                  // Padding(
-                  //   padding: EdgeInsets.only(right: 18.w),
-                  //   child: GestureDetector(
-                  //     onTap: () {
-                  //       Get.to(() => ForgetPassword());
-                  //     },
-                  //     child: Align(
-                  //       alignment: Alignment.centerRight,
-                  //       child: CustomTextIner(
-                  //         text: "Forget password",
-                  //         size: 12.sp,
-                  //         fontWeight: FontWeight.w400,
-                  //         color: Colors.black,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   SizedBox(height: 8.h),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -178,38 +159,6 @@ class LoginScreen extends StatelessWidget {
                           endIndent: 100,
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomContainer(
-                          color: const Color(0xFF191D23),
-                          height: 40.h,
-                          width: 90.w,
-                          fontWeight: FontWeight.w400,
-                          size: 12.sp,
-                          imagePath: Assetpath.google,
-                          text: "Google"),
-                      SizedBox(width: 5.w),
-                      CustomContainer(
-                          color: const Color(0xFF191D23),
-                          height: 40.h,
-                          width: 80.w,
-                          fontWeight: FontWeight.w400,
-                          size: 12.sp,
-                          imagePath: Assetpath.apple,
-                          text: "Apple"),
-                      SizedBox(width: 5.w),
-                      CustomContainer(
-                          color: const Color(0xFF191D23),
-                          height: 40.h,
-                          width: 90.w,
-                          fontWeight: FontWeight.w400,
-                          size: 12.sp,
-                          imagePath: Assetpath.facebook,
-                          text: "Facebook"),
                     ],
                   ),
                   SizedBox(height: 20.h),

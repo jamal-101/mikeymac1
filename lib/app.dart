@@ -25,10 +25,8 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
           ),
           getPages: AppRouts.routes,
-          // defaultTransition: Transition.fadeIn,
           transitionDuration: const Duration(milliseconds: 200),
           navigatorKey: Get.key,
-          // initialRoute: AppRouts.onboardingscreen,
           initialRoute: userController.isAuthenticated.value
               ? AppRouts.navBar
               : AppRouts.onboardingscreen,

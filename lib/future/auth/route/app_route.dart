@@ -14,16 +14,11 @@ import 'package:mikemac2/future/app_dog_service/dog_service/scentwork.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/training_plans.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/virtual_Video.dart';
 import 'package:mikemac2/future/home/screen/widget/about_traner.dart';
-import 'package:mikemac2/future/profile/screen/password_screen.dart';
-import 'package:mikemac2/future/profile/screen/user_profile.dart';
 import '../../app_dog_service/dog_service.dart';
 import '../../home/screen/home_screen.dart';
 import '../../nav_bar/bottom_navbar.dart';
 import '../../onbording/presentation/screen/onbording_screen.dart';
-import '../prestation/confirm_password.dart';
-import '../prestation/forget_password.dart';
 import '../prestation/login_screen.dart';
-import '../prestation/otp_screen.dart';
 import '../prestation/sing_up_screen.dart';
 
 
@@ -31,14 +26,9 @@ class AppRouts {
   static const String onboardingscreen = "/onboardingscreen";
   static const String loginScreen = "/loginScreen";
   static const String singUpScreen = "/singUpScreen";
-  static const String porgetpass = "/porgetpass";
-  static const String otpScreen = "/otpScreen";
-  static const String confirmPass = "/confirmPass";
   static const String homeScreen = "/homeScreen";
   static const String dogService = "/dogService";
   static const String navBar = "/navBar";
-  static const String userProfile = "/userProfile";
-  static const String password = "/password";
   static const String residential = "/residential";
   static const String puppytraining = "/puppytraining";
   static const String obedience = "/obedience";
@@ -59,31 +49,26 @@ class AppRouts {
     GetPage(name: onboardingscreen, page: () => OnbordingScreen()),
     GetPage(name: loginScreen, page: () => LoginScreen()),
     GetPage(name: singUpScreen, page: () => SingUpScreen()),
-    GetPage(name: porgetpass, page: () => ForgetPassword()),
-    GetPage(name: otpScreen, page: () => OtpScreen()),
-    GetPage(name: confirmPass, page: () => ConfirmPassword()),
-    GetPage(name: homeScreen, page: () => const HomeScreen()),
+    GetPage(name: homeScreen, page: () => HomeScreen()),
     GetPage(name: dogService, page: () => DogService()),
     GetPage(name: navBar, page: () => NavigatinPage()),
-    GetPage(name: userProfile, page: () => const UserProfile()),
-    GetPage(name: password, page: () => const PasswordScreen()),
-    GetPage(name: residential, page: () => const Residential()),
-    GetPage(name: puppytraining, page: () => const PuppyTraining()),
-    GetPage(name: obedience, page: () => const Obedience()),
-    GetPage(name: behavior, page: () => const Behavioral()),
-    GetPage(name: advancedObedience, page: () => const AdvancedObedience()),
-    GetPage(name: personalProtection, page: () => const PersonalProtection()),
-    GetPage(name: biteworkDevelopment, page: () => const BiteworkDevelopment()),
-    GetPage(name: helperDecoy, page: () => const HelperDecoy()),
-    GetPage(name: scentWork, page: () => const Scentwork()),
-    GetPage(name: scentWork, page: () => const Scentwork()),
-    GetPage(name: agility, page: () => const Agility()),
-    GetPage(name: igpDogSports, page: () => const IgpDogSports()),
-    GetPage(name: virtualVideo, page: () => const VirtualVideo()),
-    GetPage(name: virtualVideo, page: () => const VirtualVideo()),
-    GetPage(name: onlineTraining, page: () => const OnlineTraining()),
-    GetPage(name: aboutTrainer, page: () => const AboutTraner()),
-    GetPage(name: trainingPlans, page: () => const TrainingPlans()),
+    GetPage(name: residential, page: () => Residential()),
+    GetPage(name: puppytraining, page: () => PuppyTraining()),
+    GetPage(name: obedience, page: () => Obedience()),
+    GetPage(name: behavior, page: () => Behavioral()),
+    GetPage(name: advancedObedience, page: () => AdvancedObedience()),
+    GetPage(name: personalProtection, page: () => PersonalProtection()),
+    GetPage(name: biteworkDevelopment, page: () => BiteworkDevelopment()),
+    GetPage(name: helperDecoy, page: () => HelperDecoy()),
+    GetPage(name: scentWork, page: () => Scentwork()),
+    GetPage(name: scentWork, page: () => Scentwork()),
+    GetPage(name: agility, page: () => Agility()),
+    GetPage(name: igpDogSports, page: () => IgpDogSports()),
+    GetPage(name: virtualVideo, page: () => VirtualVideo()),
+    GetPage(name: virtualVideo, page: () => VirtualVideo()),
+    GetPage(name: onlineTraining, page: () => OnlineTraining()),
+    GetPage(name: aboutTrainer, page: () => AboutTraner()),
+    GetPage(name: trainingPlans, page: () => TrainingPlans()),
 
   ];
 }

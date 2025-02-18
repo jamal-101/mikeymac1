@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/app_color.dart';
 
-
-
 class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? hintText;
@@ -49,7 +47,6 @@ class CustomTextField extends StatelessWidget {
       textInputAction: textInputAction,
       onChanged: onChanged,
       validator: validator,
-      // maxLines: 1,
       style: colorTrue ?? false
           ? GoogleFonts.poppins(
           color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.w400)

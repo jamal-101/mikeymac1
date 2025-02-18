@@ -10,5 +10,4 @@ class SingUpController extends GetxController{
   Rx<TextEditingController> singuppasswordController = TextEditingController().obs;
   Rx<TextEditingController> singConfirmpassController = TextEditingController().obs;
 
-  // RxString activationCode = "".obs;
 }

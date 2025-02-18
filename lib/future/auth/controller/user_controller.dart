@@ -8,6 +8,7 @@ import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
 import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/home/controller/home_controller.dart';
 
+
 class UserController extends GetxController{
 
   HomeController homeController = Get.put(HomeController());
@@ -49,10 +50,6 @@ class UserController extends GetxController{
       );
       if (userCredential.user != null) {
 
-        // SharedPreferences preferences = await SharedPreferences.getInstance();
-        // preferences.setString("userID", userCredential.user!.uid);
-        // print("UserID stored: ${userCredential.user!.uid}");
-
         Get.toNamed(AppRouts.navBar);
         isLoading.value = false;
         return ;
@@ -70,10 +67,6 @@ class UserController extends GetxController{
   Future<void> logout() async {
     try {
       await _auth.signOut();
-
-      // SharedPreferences preferences = await SharedPreferences.getInstance();
-      // preferences.clear();
-
       debugPrint("logout Successfully");
       Get.offAllNamed(AppRouts.loginScreen);
     } catch (e) {

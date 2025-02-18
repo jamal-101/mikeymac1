@@ -13,8 +13,6 @@ class OnbordingScreen extends StatelessWidget {
   OnbordingScreen({super.key});
 
   final PaseviewController controller = Get.put(PaseviewController());
-
-  // final FirebaseAuth _auth = FirebaseAuth.instance;
   final UserController userController = Get.put(UserController());
 
   @override
@@ -28,16 +26,6 @@ class OnbordingScreen extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: GestureDetector(
               onTap: (){
-                // Get.to(()=> LoginScreen());
-                // _auth.authStateChanges().listen((User? user) {
-                //   if (user != null) {
-                //     Get.offAllNamed(AppRouts.navBar);
-                //   } else {
-                //     Get.offAllNamed(AppRouts.loginScreen);
-                //   }
-                // });
-                // userController.onInit();
-                // userController.checkAuthState();
                 Get.toNamed(AppRouts.loginScreen);
               },
               child: Text(
@@ -90,15 +78,6 @@ class OnbordingScreen extends StatelessWidget {
                     curve: Curves.easeInOut,
                   );
                 } else {
-                  // _auth.authStateChanges().listen((User? user) {
-                  //   if (user != null) {
-                  //     Get.offAllNamed(AppRouts.navBar);
-                  //   } else {
-                  //     Get.offAllNamed(AppRouts.loginScreen);
-                  //   }
-                  // });
-                  // userController.onInit();
-                  // userController.checkAuthState();
                   Get.toNamed(AppRouts.loginScreen);
                 }
               },

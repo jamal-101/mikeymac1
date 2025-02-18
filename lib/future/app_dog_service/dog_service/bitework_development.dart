@@ -16,34 +16,32 @@ class BiteworkDevelopment extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
-            child: Column(
-              children: [
-                Image.asset(
-                  Assetpath.details6,
-                  height: 300.h,
-                  width: 350.w,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 190),
-                  child: CustomTextIner(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15,right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    Assetpath.details6,
+                    height: 300.h,
+                    width: 350.w,
+                  ),
+                  CustomTextIner(
                     text: "Bitework Development ✅",
                     size: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF000000),
                   ),
-                ),
-                SizedBox(height: 10.h,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15,right: 15),
-                  child: CustomTextManrope(
+                  SizedBox(height: 10.h,),
+                  CustomTextManrope(
                     text: '''Dog bite work is specialized training for personal protection dogs, focusing on controlled biting and holding to deter threats. Unlike guard dogs, which focus on deterrence, bite work dogs are trained to act when a threat arises, ensuring the safety of their owner.
 Key elements of bite work training include:
-  1.Obedience Foundation \n     Before bite work, dogs must master basic \n     commands (sit, stay, come, heel) to ensure control \n    and responsiveness in high-pressure \n    situations.
-  2.Bite Command Training \n       Dogs are taught to bite on command, \n       emphasizing control, \n       precision, and safe execution.
-  3.Controlled Aggression \n      Dogs learn to use aggression only when necessary, \n      staying focused and calm under stress.
-  4.Bite & Hold \n      Dogs are trained to bite and hold until released, \n       ensuring effective threat neutralization.
+1.Obedience Foundation \n     Before bite work, dogs must master basic \n     commands (sit, stay, come, heel) to ensure control \n    and responsiveness in high-pressure \n    situations.
+2.Bite Command Training \n       Dogs are taught to bite on command, \n       emphasizing control, \n       precision, and safe execution.
+3.Controlled Aggression \n      Dogs learn to use aggression only when necessary, \n      staying focused and calm under stress.
+4.Bite & Hold \n      Dogs are trained to bite and hold until released, \n       ensuring effective threat neutralization.
 Bite work helps prepare dogs to protect their owners with discipline, control, and safety.
-
+              
 2. Introduction to the Bite Sleeve or Bite Suit
 The bite sleeve or bite suit is used as the primary tool in bite work training. The dog is taught to bite and hold onto the sleeve or suit, simulating a real-life threat scenario. The training gradually increases in intensity, helping the dog learn proper biting techniques without causing injury to the person involved in the training.
 3. Controlled Aggression
@@ -58,29 +56,29 @@ The release command is essential to ensure the dog will release the bite when in
 In bite work training, the dog is often introduced to simulated threat scenarios, where an “attacker” may approach, act aggressively, or attempt to overpower the handler. The dog must quickly assess the threat and respond with the appropriate level of force and protection.
 8. Safety and Ethics
 It's important to note that professional dog bite work training emphasizes the safety and well-being of both the dog and the person being trained. Bite work should never be about causing harm or fostering unnecessary aggression, but rather about preparing the dog to protect in a controlled and ethical manner.
- ''',
+               ''',
                     fontWeight: FontWeight.w400,
                     size: 14.sp,
                     color: const Color(0xFF334155),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: CustomButton(
-                      height: 50.h,
-                      width: 370.w,
-                      title: "Call For Service",
-                      textStyle: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16.sp,
-                          fontFamily: 'Helvetica',
-                          color: const Color(0xFFFFFFFF)
-                      ),
-                      onTap: (){
-                        CustomDialog().showContactDialog(context);
-                      }
-                  ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: CustomButton(
+                        height: 50.h,
+                        width: 370.w,
+                        title: "Call For Service",
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16.sp,
+                            fontFamily: 'Helvetica',
+                            color: const Color(0xFFFFFFFF)
+                        ),
+                        onTap: (){
+                          CustomDialog().showContactDialog(context);
+                        }
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
