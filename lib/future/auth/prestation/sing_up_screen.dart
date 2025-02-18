@@ -26,6 +26,7 @@ class SingUpScreen extends StatelessWidget {
     UserController userController = UserController();
 
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.white,),
       body: Obx(() => SafeArea(
           child: SingleChildScrollView(
             child: Form(
@@ -33,7 +34,7 @@ class SingUpScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 60.h,),
+                 
                   Center(
                     child: Image.asset(
                       Assetpath.login,

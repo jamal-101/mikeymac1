@@ -45,5 +45,18 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- Allowing URL Schemes for Phone Calls and Email -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>+4407496013382</string>
+		<string>k9ts@yahoo.com</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+
 </dict>
 </plist>
