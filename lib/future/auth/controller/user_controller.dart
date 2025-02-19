@@ -8,9 +8,7 @@ import 'package:mikemac2/future/auth/controller/sing_up_controller.dart';
 import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/home/controller/home_controller.dart';
 
-
-class UserController extends GetxController{
-
+class UserController extends GetxController {
   HomeController homeController = Get.put(HomeController());
 
   var isLoading = false.obs;
@@ -21,47 +19,38 @@ class UserController extends GetxController{
   final LoginController loginController = Get.put(LoginController());
   final SingUpController singUpController = Get.put(SingUpController());
 
-  Future<void> registration(String email,String password) async {
+  Future<void> registration(String email, String password) async {
     debugPrint("=================$email");
     debugPrint("=================$password");
 
-      UserCredential userCredential =
-      await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+    UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
 
-      EasyLoading.showSuccess("Registration completed successfully");
-      Get.offAllNamed(AppRouts.navBar);
-
+    EasyLoading.showSuccess("Registration completed successfully");
+    Get.offAllNamed(AppRouts.navBar);
   }
 
-
   Future<void> login(String email, String password) async {
-
     isLoading.value = true;
 
     debugPrint("=================$email");
     debugPrint("=================$password");
 
-      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      if (userCredential.user != null) {
-
-        Get.toNamed(AppRouts.navBar);
-        isLoading.value = false;
-        return ;
-      }else if(homeController.change.value = true){
-        Get.off(AppRouts.navBar);
-      }
-      else{
-
-        debugPrint('++++++++++++++++ wrong email or password++++++++++++++++++');
-
-      }
-
+    UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    if (userCredential.user != null) {
+      Get.toNamed(AppRouts.navBar);
+      isLoading.value = false;
+      return;
+    } else if (homeController.change.value = true) {
+      Get.off(AppRouts.navBar);
+    } else {
+      debugPrint('++++++++++++++++ wrong email or password++++++++++++++++++');
+    }
   }
 
   Future<void> logout() async {
@@ -70,16 +59,21 @@ class UserController extends GetxController{
       debugPrint("logout Successfully");
       Get.offAllNamed(AppRouts.loginScreen);
     } catch (e) {
-    debugPrint("logout Faild");
+      debugPrint("logout Faild");
     }
   }
 
   var isAuthenticated = false.obs;
 
   void checkAuthState() {
+    debugPrint("==========<>>>>>>>>>$isAuthenticated");
     _auth.authStateChanges().listen((User? user) {
       if (user != null) {
+        debugPrint("==========+<><><>${user.displayName}");
+        debugPrint("==========+<><><>${user.uid}");
+        debugPrint("==========+<><><>${user.email}");
         isAuthenticated.value = true;
+        debugPrint("==========<Cheak>>>>>>>>>$isAuthenticated");
         Get.offAllNamed(AppRouts.navBar);
       } else {
         isAuthenticated.value = false;
