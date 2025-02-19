@@ -148,28 +148,32 @@ class SingUpScreen extends StatelessWidget {
                   SizedBox(height: 8.h,),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: CustomButton(
-                      title: "Create Account",
-                      textStyle: GoogleFonts.inter(
-                        color: const Color(0xFFFFFFFF),
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
+                    child: Obx(()=>
+                    userController.isLoading.value?
+                    const Center(child: CircularProgressIndicator()) :
+                       CustomButton(
+                        title: "Create Account",
+                        textStyle: GoogleFonts.inter(
+                          color: const Color(0xFFFFFFFF),
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            userController.registration(
+                                singUpController.singupemailController.value.text,
+                                singUpController.singuppasswordController.value.text
+                            );
+                          }
+                        },
+                        height: 50.h,
+                        width: 400.w,
+                        backgroundColor: Colors.black,
+                        textColor: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        elevation: 6,
                       ),
-                      onTap: () {
-                        if (formKey.currentState!.validate()) {
-                          userController.registration(
-                              singUpController.singupemailController.value.text,
-                              singUpController.singuppasswordController.value.text
-                          );
-                        }
-                      },
-                      height: 50.h,
-                      width: 400.w,
-                      backgroundColor: Colors.black,
-                      textColor: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      elevation: 6,
                     ),
                   ),
                 ],

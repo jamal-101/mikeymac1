@@ -3,26 +3,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
 import 'package:mikemac2/future/home/screen/home_screen.dart';
-import 'package:mikemac2/future/profile/screen/profile.dart';
 import '../app_dog_service/dog_service.dart';
 import '../app_dog_service/dog_shop.dart';
 import 'controller/nab_bar_controller.dart';
-
+import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
 
 class NavigatinPage extends StatelessWidget {
-
   NavigatinPage({super.key});
 
   List<Widget> screen = [
     const HomeScreen(),
     DogService(),
     DogShop(),
-    Profile(),
   ];
 
   @override
   Widget build(BuildContext context) {
     final BottomNavigationController bottomNavigationController = Get.put(BottomNavigationController());
+
     return Scaffold(
       body: Obx(() => IndexedStack(
         index: bottomNavigationController.selectedIndex.value,
@@ -36,18 +34,28 @@ class NavigatinPage extends StatelessWidget {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         onTap: (index) {
-          bottomNavigationController.changeIndex(index);
+          if (index == 3) {
+            showModalBottomSheet(
+              context: context,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+              ),
+              builder: (context) => const CustomDailalog(),
+            );
+          } else {
+            bottomNavigationController.changeIndex(index);
+          }
         },
         currentIndex: bottomNavigationController.selectedIndex.value,
-        items:  [
+        items: [
           BottomNavigationBarItem(
             icon: Image.asset(
               Assetpath.nav1,
               height: 24.h,
               width: 24.w,
-        color: bottomNavigationController.selectedIndex.value == 0
-            ? Colors.green
-            : Colors.white,
+              color: bottomNavigationController.selectedIndex.value == 0
+                  ? Colors.green
+                  : Colors.white,
             ),
             label: "Home",
             backgroundColor: Colors.black,
@@ -57,10 +65,10 @@ class NavigatinPage extends StatelessWidget {
               Assetpath.nav2,
               height: 24.h,
               width: 24.w,
-              // color: Colors.green,
               color: bottomNavigationController.selectedIndex.value == 1
-              ? Colors.green : Colors.white,
-              ),
+                  ? Colors.green
+                  : Colors.white,
+            ),
             label: "Service",
             backgroundColor: Colors.black,
           ),
@@ -70,20 +78,20 @@ class NavigatinPage extends StatelessWidget {
               height: 24.h,
               width: 24.w,
               color: bottomNavigationController.selectedIndex.value == 2
-              ? Colors.green : Colors.white,
+                  ? Colors.green
+                  : Colors.white,
             ),
             label: "Shop",
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              Assetpath.nav4,
+              Assetpath.logout,
               height: 24.h,
               width: 24.w,
-              color: bottomNavigationController.selectedIndex.value == 3
-                  ? Colors.green : Colors.white,
+              color: Colors.white,
             ),
-            label: "Profile",
+            label: "Logout",
             backgroundColor: Colors.black,
           ),
         ],

@@ -22,6 +22,9 @@ class UserController extends GetxController{
   final SingUpController singUpController = Get.put(SingUpController());
 
   Future<void> registration(String email,String password) async {
+
+    isLoading.value = true;
+
     debugPrint("=================$email");
     debugPrint("=================$password");
 
