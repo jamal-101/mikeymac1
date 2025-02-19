@@ -206,7 +206,7 @@ class HomeScreen extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 30.h),
                             child: SizedBox(
-                              height: 100.h,
+                              height: 110.h,
                                 child: CustomShop()),
                           ),
                           Padding(
