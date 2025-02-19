@@ -87,8 +87,8 @@ class NavigatinPage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Image.asset(
               Assetpath.logout,
-              height: 24.h,
-              width: 24.w,
+              height: 30.h,
+              width: 30.w,
               color: Colors.white,
             ),
             label: "Logout",
