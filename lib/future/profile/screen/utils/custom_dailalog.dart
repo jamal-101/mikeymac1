@@ -32,7 +32,7 @@ class CustomDailalog extends StatelessWidget {
               ),
             ),
             const Divider(
-              color: Color(0xFFF2F4F7),
+              color: Color(0x0fff2f4f),
               height: 50,
               thickness: 3,
               endIndent: 16,

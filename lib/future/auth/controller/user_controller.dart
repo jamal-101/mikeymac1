@@ -19,7 +19,10 @@ class UserController extends GetxController {
   final LoginController loginController = Get.put(LoginController());
   final SingUpController singUpController = Get.put(SingUpController());
 
-  Future<void> registration(String email, String password) async {
+  Future<void> registration(String email,String password) async {
+
+    isLoading.value = true;
+
     debugPrint("=================$email");
     debugPrint("=================$password");
 
@@ -28,8 +31,9 @@ class UserController extends GetxController {
       password: password,
     );
 
-    EasyLoading.showSuccess("Registration completed successfully");
-    Get.offAllNamed(AppRouts.navBar);
+      EasyLoading.showSuccess("Registration completed successfully");
+      Get.offAllNamed(AppRouts.loginScreen);
+
   }
 
   Future<void> login(String email, String password) async {
