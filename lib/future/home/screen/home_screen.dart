@@ -229,7 +229,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start, 
                     children: [
                       CustomTextHelvatica(
                         text: "About Trainer",
