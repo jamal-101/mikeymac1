@@ -156,22 +156,27 @@ class HomeScreen extends StatelessWidget {
                   ),
                   itemCount: DogService().serviceList.length - 8,
                   itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color(0xFFF7F7F7)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            DogService().serviceList[index]['image'],
-                            height: 70,
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(DogService().serviceList[index]['title'])
-                        ],
+                    return GestureDetector(
+                      onTap: () {
+                        Get.toNamed(DogService().serviceList[index]['route']);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color(0xFFF7F7F7)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              DogService().serviceList[index]['image'],
+                              height: 70.h,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(DogService().serviceList[index]['title'])
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -208,7 +213,14 @@ class HomeScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 30.h),
-              child: SizedBox(height: 110.h, child: CustomShop()),
+              child: SizedBox(
+                  height: 100.h,
+                  child: GestureDetector(
+                      onTap: () {
+                        UrlLauncher.launchUrl(Uri.parse(
+                            "https://www.facebook.com/\nK9TrainingServices?mibextid=LQQJ4d"));
+                      },
+                      child: CustomShop())),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22),
