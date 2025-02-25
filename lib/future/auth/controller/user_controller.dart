@@ -19,8 +19,7 @@ class UserController extends GetxController {
   final LoginController loginController = Get.put(LoginController());
   final SingUpController singUpController = Get.put(SingUpController());
 
-  Future<void> registration(String email,String password) async {
-
+  Future<void> registration(String email, String password) async {
     isLoading.value = true;
 
     debugPrint("=================$email");
@@ -31,29 +30,35 @@ class UserController extends GetxController {
       password: password,
     );
 
-      EasyLoading.showSuccess("Registration completed successfully");
-      Get.offAllNamed(AppRouts.loginScreen);
-
+    EasyLoading.showSuccess("Registration completed successfully");
+    Get.offAllNamed(AppRouts.loginScreen);
   }
 
   Future<void> login(String email, String password) async {
-    isLoading.value = true;
+    try {
+      isLoading.value = true;
+      debugPrint("=================$email");
+      debugPrint("=================$password");
 
-    debugPrint("=================$email");
-    debugPrint("=================$password");
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-    UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    if (userCredential.user != null) {
-      Get.toNamed(AppRouts.navBar);
+      if (userCredential.user != null) {
+        Get.toNamed(AppRouts.navBar);
+      } else if (homeController.change.value) {
+        Get.off(AppRouts.navBar);
+      } else {
+        debugPrint(
+            '++++++++++++++++ Wrong email or password ++++++++++++++++++');
+      }
+    } on FirebaseAuthException catch (e) {
+      debugPrint("FirebaseAuthException: ${e.message}");
+    } catch (e) {
+      debugPrint("Error: $e");
+    } finally {
       isLoading.value = false;
-      return;
-    } else if (homeController.change.value = true) {
-      Get.off(AppRouts.navBar);
-    } else {
-      debugPrint('++++++++++++++++ wrong email or password++++++++++++++++++');
     }
   }
 

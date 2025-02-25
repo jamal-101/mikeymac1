@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'future/auth/controller/user_controller.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_,child){
         return GetMaterialApp(
+          builder: EasyLoading.init(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
