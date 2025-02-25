@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.k9trainingservice.mikemac2</string>
+	<string>com.k9trainingservice.mikemac1</string>
 	<key>PROJECT_ID</key>
 	<string>mickey-e7618</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1034779219975:ios:45af440ddfb6401011b2a2</string>
+	<string>1:1034779219975:ios:58937807ab17629a11b2a2</string>
 </dict>
 </plist>
