@@ -20,9 +20,6 @@ class UserController extends GetxController {
   Future<void> registration(String email, String password) async {
     isLoading.value = true;
 
-    debugPrint("=================$email");
-    debugPrint("=================$password");
-
     EasyLoading.showSuccess("Registration completed successfully");
     Get.offAllNamed(AppRouts.loginScreen);
   }
@@ -30,8 +27,6 @@ class UserController extends GetxController {
   Future<void> login(String email, String password) async {
     try {
       isLoading.value = true;
-      debugPrint("=================$email");
-      debugPrint("=================$password");
 
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email,
