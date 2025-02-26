@@ -48,8 +48,6 @@ Future<void> registration(String email, String password) async {
   Future<void> login(String email, String password) async {
     try {
       isLoading.value = true;
-      debugPrint("=================$email");
-      debugPrint("=================$password");
 
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email,
@@ -86,7 +84,7 @@ Future<void> registration(String email, String password) async {
   var isAuthenticated = false.obs;
 
   void checkAuthState() {
-    debugPrint("==========<>>>>>>>>>$isAuthenticated");
+   
     _auth.authStateChanges().listen((User? user) {
       if (user != null) {
   
