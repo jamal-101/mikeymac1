@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -13,20 +14,42 @@ class UserController extends GetxController {
   var isLoading = false.obs;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   final LoginController loginController = Get.put(LoginController());
   final SingUpController singUpController = Get.put(SingUpController());
 
-  Future<void> registration(String email, String password) async {
+Future<void> registration(String email, String password) async {
+  try {
     isLoading.value = true;
+
+    debugPrint("=================$email");
+    debugPrint("=================$password");
+
+    // ignore: unused_local_variable
+    UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
 
     EasyLoading.showSuccess("Registration completed successfully");
     Get.offAllNamed(AppRouts.loginScreen);
+  } on FirebaseAuthException catch (e) {
+    EasyLoading.showError(e.message ?? "Registration failed");
+  } catch (e) {
+    EasyLoading.showError("An unexpected error occurred");
+    debugPrint("Error: $e");
+  } finally {
+    isLoading.value = false;
   }
+}
+
 
   Future<void> login(String email, String password) async {
     try {
       isLoading.value = true;
+      debugPrint("=================$email");
+      debugPrint("=================$password");
 
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email,
@@ -63,10 +86,12 @@ class UserController extends GetxController {
   var isAuthenticated = false.obs;
 
   void checkAuthState() {
+    debugPrint("==========<>>>>>>>>>$isAuthenticated");
     _auth.authStateChanges().listen((User? user) {
       if (user != null) {
+  
         isAuthenticated.value = true;
-
+    
         Get.offAllNamed(AppRouts.navBar);
       } else {
         isAuthenticated.value = false;
