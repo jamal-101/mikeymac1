@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -14,7 +13,6 @@ class UserController extends GetxController {
   var isLoading = false.obs;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   final LoginController loginController = Get.put(LoginController());
   final SingUpController singUpController = Get.put(SingUpController());
@@ -24,11 +22,6 @@ class UserController extends GetxController {
 
     debugPrint("=================$email");
     debugPrint("=================$password");
-
-    UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
 
     EasyLoading.showSuccess("Registration completed successfully");
     Get.offAllNamed(AppRouts.loginScreen);
@@ -75,14 +68,10 @@ class UserController extends GetxController {
   var isAuthenticated = false.obs;
 
   void checkAuthState() {
-    debugPrint("==========<>>>>>>>>>$isAuthenticated");
     _auth.authStateChanges().listen((User? user) {
       if (user != null) {
-        debugPrint("==========+<><><>${user.displayName}");
-        debugPrint("==========+<><><>${user.uid}");
-        debugPrint("==========+<><><>${user.email}");
         isAuthenticated.value = true;
-        debugPrint("==========<Cheak>>>>>>>>>$isAuthenticated");
+
         Get.offAllNamed(AppRouts.navBar);
       } else {
         isAuthenticated.value = false;
