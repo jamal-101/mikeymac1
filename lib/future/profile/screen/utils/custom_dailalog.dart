@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/global_widget/custom_text_lato.dart';
@@ -49,18 +50,20 @@ class CustomDailalog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Obx(
-                      () => CustomButton1(
+                  () => CustomButton1(
                     borderColor: Colors.black,
                     borderWidth: 1.0,
                     height: 50,
                     width: 150,
                     title: "No",
-                    textColor: dialogController.isNoButtonClicked.value ? Colors.white : Colors.black,
+                    textColor: dialogController.isNoButtonClicked.value
+                        ? Colors.white
+                        : Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                     onTap: () {
                       dialogController.isNoButtonClicked.value =
-                      !dialogController.isNoButtonClicked.value;
+                          !dialogController.isNoButtonClicked.value;
                       dialogController.isYesButtonClicked.value = false;
 
                       Navigator.of(context).pop();
@@ -70,24 +73,29 @@ class CustomDailalog extends StatelessWidget {
                         : Colors.white,
                   ),
                 ),
-                SizedBox(width: 20.w,),
+                SizedBox(
+                  width: 20.w,
+                ),
                 Obx(
-                      () => CustomButton1(
+                  () => CustomButton1(
                     borderColor: Colors.black,
                     borderWidth: 1.0,
                     height: 50,
                     width: 150,
                     title: "Yes",
-                    textColor: dialogController.isYesButtonClicked.value ? Colors.white : Colors.black,
+                    textColor: dialogController.isYesButtonClicked.value
+                        ? Colors.white
+                        : Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                     onTap: () {
                       dialogController.isYesButtonClicked.value =
-                      !dialogController.isYesButtonClicked.value;
+                          !dialogController.isYesButtonClicked.value;
                       dialogController.isNoButtonClicked.value = false;
 
                       if (dialogController.isYesButtonClicked.value) {
                         userController.logout();
+                        EasyLoading.showSuccess("Logout Succesfull");
                       }
                     },
                     backgroundColor: dialogController.isYesButtonClicked.value
@@ -97,7 +105,9 @@ class CustomDailalog extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10.h,)
+            SizedBox(
+              height: 10.h,
+            )
           ],
         ),
       ),
