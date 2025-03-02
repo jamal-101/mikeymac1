@@ -103,7 +103,10 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: Obx(
                     () => userController.isLoading.value
-                        ? const Center(child: CircularProgressIndicator(color: Colors.black,))
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                            color: Colors.black,
+                          ))
                         : CustomButton(
                             title: "Login",
                             textStyle: GoogleFonts.inter(

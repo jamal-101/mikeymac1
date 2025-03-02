@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/global_widget/custom_text_lato.dart';
+import 'package:mikemac2/future/auth/controller/login_controller.dart';
 import '../../../../core/global_widget/custom_bottom1.dart';
 import '../../../auth/controller/user_controller.dart';
 import '../../controller/dialog_controller.dart';
@@ -14,6 +15,7 @@ class CustomDailalog extends StatelessWidget {
   Widget build(BuildContext context) {
     final DialogController dialogController = Get.put(DialogController());
     final UserController userController = Get.put(UserController());
+    final LoginController loginController = Get.put(LoginController());
 
     return Container(
       height: 200.h,
@@ -89,12 +91,15 @@ class CustomDailalog extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                     onTap: () {
+                      loginController.emailController.clear();
+                      loginController.passwordController.clear();
                       dialogController.isYesButtonClicked.value =
                           !dialogController.isYesButtonClicked.value;
                       dialogController.isNoButtonClicked.value = false;
 
                       if (dialogController.isYesButtonClicked.value) {
                         userController.logout();
+
                         EasyLoading.showSuccess("Logout Succesfull");
                       }
                     },

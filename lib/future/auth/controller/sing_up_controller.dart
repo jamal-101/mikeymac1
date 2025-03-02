@@ -17,5 +17,8 @@ class SingUpController extends GetxController {
     singupemailController.value.dispose();
     singuppasswordController.value.dispose();
     singConfirmpassController.value.dispose();
+    fullName.value.clear();
+    singupemailController.value.clear();
+    singConfirmpassController.value.clear();
   }
 }
