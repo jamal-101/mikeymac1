@@ -45,35 +45,33 @@ class UserController extends GetxController {
     }
   }
 
-Future<void> login(String email, String password) async {
-  try {
-    isLoading.value = true;
+  Future<void> login(String email, String password) async {
+    try {
+      isLoading.value = true;
 
-    UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-    if (userCredential.user != null) {
-      Get.toNamed(AppRouts.navBar);
-          EasyLoading.showSuccess('Login Succesfull');
-    } else if (homeController.change.value) {
-      Get.off(AppRouts.navBar);
-        
-    } else {
-      EasyLoading.showError('Wrong email or password');
-  
+      if (userCredential.user != null) {
+        Get.toNamed(AppRouts.navBar);
+        EasyLoading.showSuccess('Login Succesfull');
+      } else if (homeController.change.value) {
+        Get.offAllNamed(AppRouts.navBar);
+      } else {
+        EasyLoading.showError('Wrong email or password');
+      }
+    } on FirebaseAuthException catch (e) {
+      EasyLoading.showError(e.message ?? 'Login failed');
+      debugPrint("FirebaseAuthException: ${e.message}");
+    } catch (e) {
+      EasyLoading.showError('An error occurred. Please try again.');
+      debugPrint("Error: $e");
+    } finally {
+      isLoading.value = false;
     }
-  } on FirebaseAuthException catch (e) {
-    EasyLoading.showError(e.message ?? 'Login failed');
-    debugPrint("FirebaseAuthException: ${e.message}");
-  } catch (e) {
-    EasyLoading.showError('An error occurred. Please try again.');
-    debugPrint("Error: $e");
-  } finally {
-    isLoading.value = false;
   }
-}
 
   Future<void> logout() async {
     try {
@@ -99,6 +97,4 @@ Future<void> login(String email, String password) async {
       }
     });
   }
-
-
 }
