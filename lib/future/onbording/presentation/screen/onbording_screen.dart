@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mikemac2/future/auth/controller/user_controller.dart';
 import 'package:mikemac2/future/auth/route/app_route.dart';
 import 'package:mikemac2/future/onbording/presentation/screen/slide.dart';
 import 'package:mikemac2/future/onbording/presentation/screen/slide_item.dart';
@@ -26,7 +25,7 @@ class OnbordingScreen extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: GestureDetector(
               onTap: (){
-                Get.toNamed(AppRouts.loginScreen);
+                Get.toNamed(AppRouts.navBar);
               },
               child: Text(
                 textAlign: TextAlign.center,
@@ -78,7 +77,7 @@ class OnbordingScreen extends StatelessWidget {
                     curve: Curves.easeInOut,
                   );
                 } else {
-                  Get.toNamed(AppRouts.loginScreen);
+                  Get.toNamed(AppRouts.navBar);
                 }
               },
               child:const CircleAvatar(

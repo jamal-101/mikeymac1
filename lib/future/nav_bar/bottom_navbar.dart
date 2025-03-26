@@ -88,16 +88,16 @@ class NavigatinPage extends StatelessWidget {
                 label: "Shop",
                 backgroundColor: Colors.black,
               ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  Assetpath.logout,
-                  height: 30.h,
-                  width: 30.w,
-                  color: Colors.white,
-                ),
-                label: "Logout",
-                backgroundColor: Colors.black,
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Image.asset(
+              //     Assetpath.logout,
+              //     height: 30.h,
+              //     width: 30.w,
+              //     color: Colors.white,
+              //   ),
+              //   label: "Exit",
+              //   backgroundColor: Colors.black,
+              // ),
             ],
           )),
     );

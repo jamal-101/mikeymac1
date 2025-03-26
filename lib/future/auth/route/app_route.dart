@@ -14,18 +14,18 @@ import 'package:mikemac2/future/app_dog_service/dog_service/scentwork.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/training_plans.dart';
 import 'package:mikemac2/future/app_dog_service/dog_service/virtual_Video.dart';
 import 'package:mikemac2/future/home/screen/widget/about_traner.dart';
+import 'package:mikemac2/future/splash/screen/splash.dart';
 import '../../app_dog_service/dog_service.dart';
 import '../../home/screen/home_screen.dart';
 import '../../nav_bar/bottom_navbar.dart';
 import '../../onbording/presentation/screen/onbording_screen.dart';
-import '../prestation/login_screen.dart';
-import '../prestation/sing_up_screen.dart';
 
 
 class AppRouts {
   static const String onboardingscreen = "/onboardingscreen";
   static const String loginScreen = "/loginScreen";
   static const String singUpScreen = "/singUpScreen";
+  static const String splash = "/splash";
   static const String homeScreen = "/homeScreen";
   static const String dogService = "/dogService";
   static const String navBar = "/navBar";
@@ -47,6 +47,7 @@ class AppRouts {
 
   static List<GetPage> routes = [
     GetPage(name: onboardingscreen, page: () => OnbordingScreen()),
+    GetPage(name: splash, page: ()=> const Splash()),
     // GetPage(name: loginScreen, page: () => LoginScreen()),
     // GetPage(name: singUpScreen, page: () => SingUpScreen()),
     GetPage(name: homeScreen, page: () => const HomeScreen()),

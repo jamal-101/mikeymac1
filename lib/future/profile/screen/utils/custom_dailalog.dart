@@ -1,5 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/global_widget/custom_text_lato.dart';
@@ -14,7 +16,9 @@ class CustomDailalog extends StatelessWidget {
     final DialogController dialogController = Get.put(DialogController());
     // final UserController userController = Get.put(UserController());
     // final LoginController loginController = Get.put(LoginController());
+    void closeApp() {
 
+}
     return Container(
       height: 200.h,
       width: 400.w,
@@ -26,7 +30,7 @@ class CustomDailalog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 25),
               child: CustomTextLato(
-                text: "Logout",
+                text: "Exit",
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 size: 20.sp,
@@ -40,7 +44,7 @@ class CustomDailalog extends StatelessWidget {
               indent: 16,
             ),
             CustomTextLato(
-              text: "Are you sure you want to log out?",
+              text: "Are you sure you want to Exit?",
               fontWeight: FontWeight.w400,
               size: 16.sp,
               color: const Color(0xFF344054),
@@ -89,6 +93,10 @@ class CustomDailalog extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp,
                     onTap: () {
+              
+                     Future.delayed(const Duration(milliseconds: 1000), () {
+        SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+      });
                       // loginController.emailController.clear();
                       // loginController.passwordController.clear();
                       dialogController.isYesButtonClicked.value =
@@ -98,7 +106,7 @@ class CustomDailalog extends StatelessWidget {
                       if (dialogController.isYesButtonClicked.value) {
                         // userController.logout();
 
-                        EasyLoading.showSuccess("Logout Succesfull");
+                        // EasyLoading.showSuccess("Logout Succesfull");
                       }
                     },
                     backgroundColor: dialogController.isYesButtonClicked.value
@@ -115,5 +123,12 @@ class CustomDailalog extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+void closeApp() {
+  if (Platform.isAndroid) {
+    SystemNavigator.pop(); 
+  } else if (Platform.isIOS) {
+    SystemChannels.platform.invokeMethod('SystemNavigator.pop'); 
   }
 }
