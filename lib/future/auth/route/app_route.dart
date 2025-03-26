@@ -47,8 +47,8 @@ class AppRouts {
 
   static List<GetPage> routes = [
     GetPage(name: onboardingscreen, page: () => OnbordingScreen()),
-    GetPage(name: loginScreen, page: () => LoginScreen()),
-    GetPage(name: singUpScreen, page: () => SingUpScreen()),
+    // GetPage(name: loginScreen, page: () => LoginScreen()),
+    // GetPage(name: singUpScreen, page: () => SingUpScreen()),
     GetPage(name: homeScreen, page: () => const HomeScreen()),
     GetPage(name: dogService, page: () => DogService()),
     GetPage(name: navBar, page: () => NavigatinPage()),

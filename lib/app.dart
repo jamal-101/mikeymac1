@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final UserController userController = Get.put(UserController());
-    userController.checkAuthState();
+    // final UserController userController = Get.put(UserController());
+    // userController.checkAuthState();
 
     return ScreenUtilInit(
       designSize: const Size(390, 844),
@@ -29,9 +29,10 @@ class MyApp extends StatelessWidget {
           getPages: AppRouts.routes,
           transitionDuration: const Duration(milliseconds: 200),
           navigatorKey: Get.key,
-          initialRoute: userController.isAuthenticated.value
-              ? AppRouts.navBar
-              : AppRouts.onboardingscreen,
+          initialRoute: AppRouts.navBar,
+          // initialRoute: userController.isAuthenticated.value
+          //     ? AppRouts.navBar
+          //     : AppRouts.navBar,
         );
       },
     );

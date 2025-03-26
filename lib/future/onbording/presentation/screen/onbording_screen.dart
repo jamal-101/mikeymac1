@@ -13,7 +13,7 @@ class OnbordingScreen extends StatelessWidget {
   OnbordingScreen({super.key});
 
   final PaseviewController controller = Get.put(PaseviewController());
-  final UserController userController = Get.put(UserController());
+  // final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
