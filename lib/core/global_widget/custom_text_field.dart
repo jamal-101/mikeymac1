@@ -55,6 +55,7 @@ class CustomTextField extends StatelessWidget {
         fontSize: 16.sp,
       ),
       minLines: min,
+      maxLines: max,
       decoration: InputDecoration(
         enabled: enable ?? true,
         hintText: hintText,

@@ -16,9 +16,6 @@ class CustomDailalog extends StatelessWidget {
     final DialogController dialogController = Get.put(DialogController());
     // final UserController userController = Get.put(UserController());
     // final LoginController loginController = Get.put(LoginController());
-    void closeApp() {
-
-}
     return Container(
       height: 200.h,
       width: 400.w,

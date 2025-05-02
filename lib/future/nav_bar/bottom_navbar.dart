@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mikemac2/core/utils/assets_path.dart';
+import 'package:mikemac2/future/booking/screen/booking.dart';
 import 'package:mikemac2/future/home/screen/home_screen.dart';
 import '../app_dog_service/dog_service.dart';
 import '../app_dog_service/dog_shop.dart';
 import 'controller/nab_bar_controller.dart';
-import 'package:mikemac2/future/profile/screen/utils/custom_dailalog.dart';
 
 class NavigatinPage extends StatelessWidget {
   NavigatinPage({super.key});
@@ -17,6 +17,7 @@ class NavigatinPage extends StatelessWidget {
     const HomeScreen(),
     DogService(),
     DogShop(),
+     Booking(),
   ];
 
   @override
@@ -37,18 +38,9 @@ class NavigatinPage extends StatelessWidget {
             showSelectedLabels: true,
             showUnselectedLabels: true,
             onTap: (index) {
-              if (index == 3) {
-                showModalBottomSheet(
-                  context: context,
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(20.r)),
-                  ),
-                  builder: (context) => const CustomDailalog(),
-                );
-              } else {
+              
                 bottomNavigationController.changeIndex(index);
-              }
+             
             },
             currentIndex: bottomNavigationController.selectedIndex.value,
             items: [
@@ -88,16 +80,18 @@ class NavigatinPage extends StatelessWidget {
                 label: "Shop",
                 backgroundColor: Colors.black,
               ),
-              // BottomNavigationBarItem(
-              //   icon: Image.asset(
-              //     Assetpath.logout,
-              //     height: 30.h,
-              //     width: 30.w,
-              //     color: Colors.white,
-              //   ),
-              //   label: "Exit",
-              //   backgroundColor: Colors.black,
-              // ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  Assetpath.booking,
+                  height: 30.h,
+                  width: 30.w,
+                      color: bottomNavigationController.selectedIndex.value == 3
+                      ? Colors.green
+                      : Colors.white,
+                ),
+                label: "Booking",
+                backgroundColor: Colors.black,
+              ),
             ],
           )),
     );
