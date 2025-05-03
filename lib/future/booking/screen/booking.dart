@@ -90,6 +90,21 @@ class Booking extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 CustomTextField(
+                  text: "Address",
+                  validator: (p0) {
+                    if (p0 == null || p0.isEmpty) {
+                      return 'Please enter your address';
+                    } else if (p0.length < 6) {
+                      return 'Address must be at least 4 characters';
+                    }
+                    return null;
+                  },
+                  controller: controller.address,
+                  hintText: "Enter your Address",
+                  min: 2,
+                ),
+                SizedBox(height: 10.h),
+                CustomTextField(
                   text: "Description",
                   validator: (p0) {
                     if (p0 == null || p0.isEmpty) {
@@ -106,20 +121,25 @@ class Booking extends StatelessWidget {
                 SizedBox(height: 20.h),
                 SizedBox(
                   width: double.infinity,
-                  child: CustomButton(
-                    title: "Book Now",
-                    onTap: () {
-                      if ((key.currentState as FormState).validate()) {
-                        controller.sendBookingEmail();
-                       
-                      } 
-                    },
-                    textStyle: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: controller.isLoading.value
+                      ? const Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.black,
+                          ),
+                        )
+                      : CustomButton(
+                          title: "Book Now",
+                          onTap: () {
+                            if ((key.currentState as FormState).validate()) {
+                              controller.sendBookingEmail();
+                            }
+                          },
+                          textStyle: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
                 )
               ],
             ),

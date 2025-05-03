@@ -9,6 +9,7 @@ class BookingController extends GetxController {
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
   final descriptionController = TextEditingController();
+  final address = TextEditingController();
   RxBool isLoading = false.obs;
 
   Future<void> sendBookingEmail() async {
@@ -30,6 +31,7 @@ class BookingController extends GetxController {
 Name: ${nameController.text}
 Email: ${emailController.text}
 Phone: ${phoneController.text}
+Address: ${address.text}
 Description: ${descriptionController.text}
 ''';
 
@@ -48,10 +50,10 @@ Description: ${descriptionController.text}
         btnOkOnPress: () {},
         btnOkIcon: Icons.check_circle,
         btnOkColor: Colors.green,
-      ).show(); // ✅ Must call show() at the end
+      ).show(); 
     } catch (e) {
       isLoading.value = false;
-
+      Get.snackbar('Error', 'Failed to send email: $e');
       debugPrint('-====================Error: $e');
     } finally {
       isLoading.value = false;
