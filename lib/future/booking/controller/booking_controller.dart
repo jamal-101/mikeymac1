@@ -15,16 +15,16 @@ class BookingController extends GetxController {
     final smtpServer = SmtpServer(
       'smtp.mail.yahoo.com',
       port: 587,
-      username: 'yourname@yahoo.com',
-      password: 'your_generated_app_password',
+      username: 'k9ts@yahoo.com',
+      password: 'kqachzxlakovdojg',
       ignoreBadCertificate: false,
       ssl: false,
       allowInsecure: false,
     );
 
     final message = Message()
-      ..from = const Address('mdsumonhossan743@yahoo.com', 'Booking App')
-      ..recipients.add('sumonhossansm@gmail.com') // Destination email
+      ..from = const Address('k9ts@yahoo.com', 'K9 Training')
+      ..recipients.add('icz2456@gmail.com')
       ..subject = 'New Booking Request'
       ..text = '''
 Name: ${nameController.text}
@@ -35,23 +35,23 @@ Description: ${descriptionController.text}
 
     try {
       isLoading.value = true;
-  AwesomeDialog(
-  context: Get.context!,
-  dialogType: DialogType.success, // ✅ Shows checkmark animation
-  animType: AnimType.scale,
-  title: 'Success',
-  desc: 'Email sent successfully!',
-  btnOkOnPress: () {},
-  btnOkIcon: Icons.check_circle,
-  btnOkColor: Colors.green,
-).show(); // ✅ Must call show() at the end
 
       await send(message, smtpServer);
 
       Get.snackbar('Success', 'Booking email sent!');
+      AwesomeDialog(
+        context: Get.context!,
+        dialogType: DialogType.success,
+        animType: AnimType.scale,
+        title: 'Email sent successfully!',
+        desc: 'Your booking request has been sent\nwe will contact you soon.',
+        btnOkOnPress: () {},
+        btnOkIcon: Icons.check_circle,
+        btnOkColor: Colors.green,
+      ).show(); // ✅ Must call show() at the end
     } catch (e) {
       isLoading.value = false;
-     
+
       debugPrint('-====================Error: $e');
     } finally {
       isLoading.value = false;
