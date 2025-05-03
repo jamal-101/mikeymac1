@@ -47,10 +47,16 @@ Description: ${descriptionController.text}
         animType: AnimType.scale,
         title: 'Email sent successfully!',
         desc: 'Your booking request has been sent\nwe will contact you soon.',
-        btnOkOnPress: () {},
+        btnOkOnPress: () {
+          nameController.clear();
+          emailController.clear();
+          phoneController.clear();
+          descriptionController.clear();
+          address.clear();
+        },
         btnOkIcon: Icons.check_circle,
         btnOkColor: Colors.green,
-      ).show(); 
+      ).show();
     } catch (e) {
       isLoading.value = false;
       Get.snackbar('Error', 'Failed to send email: $e');

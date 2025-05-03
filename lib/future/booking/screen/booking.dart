@@ -121,7 +121,7 @@ class Booking extends StatelessWidget {
                 SizedBox(height: 20.h),
                 SizedBox(
                   width: double.infinity,
-                  child: controller.isLoading.value
+                  child: Obx(() =>  controller.isLoading.value
                       ? const Center(
                           child: CircularProgressIndicator(
                             color: Colors.black,
@@ -140,7 +140,7 @@ class Booking extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                )
+                ))
               ],
             ),
           ),
