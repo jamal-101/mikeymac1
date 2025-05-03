@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'future/auth/controller/user_controller.dart';
 import 'future/auth/route/app_route.dart';
 
 class MyApp extends StatelessWidget {
